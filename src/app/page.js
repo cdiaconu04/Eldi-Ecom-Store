@@ -2,8 +2,8 @@
 import { useState, useEffect } from 'react';
 
 export default function Home() {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+  const [windowWidth, setWindowWidth] = useState(0);
+  const [windowHeight, setWindowHeight] = useState(0);
 
   useEffect(() => {
     const handleResize = () => {
@@ -11,10 +11,10 @@ export default function Home() {
       setWindowHeight(window.innerHeight);
     };
 
-    if (typeof window !== "undefined") {
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   });
 
   return (
@@ -24,8 +24,10 @@ export default function Home() {
         
       </div>
 
+      <div>
+        
+      </div>
 
-      {/* <p>h</p> */}
     </div>
   );
 }
