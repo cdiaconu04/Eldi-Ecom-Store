@@ -14,13 +14,13 @@ export default function Home() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsInView(true);
-        } else {
           setIsInView(false);
+        } else {
+          setIsInView(true);
         }
       },
         
-      { threshold: 0.97 }
+      { threshold: 0.12 }
     );
             
     if (popularRef.current) {
@@ -51,7 +51,7 @@ export default function Home() {
       <Navbar moved={isInView}/>
 
       {/* Intro section */}
-      <div className="w-full bg-black">
+      <div className="w-full bg-black" ref={popularRef}>
         
         {/* Background */}
         <div className="absolute inset-0 pointer-events-none h-screen z-0">
@@ -73,7 +73,7 @@ export default function Home() {
       </div>
 
       {/* Popular products */}
-      <div className="w-full bg-stone-100" ref={popularRef}>
+      <div className="w-full bg-stone-100">
         <div className="max-w-screen-xl mx-auto py-30 flex flex-col gap-17 items-center justify-center relative overflow-hidden">
           
           <div>
