@@ -1,10 +1,13 @@
-export default function Navbar() {
+export default function Navbar({moved}) {
+    const topStyle = "fixed top-0 left-0 w-full z-50 bg-opacity-100"
+    const movedStyle = "fixed top-0 left-0 w-full z-50 bg-neutral-950"
+
     return (
-        <nav className="fixed top-0 left-0 w-full z-50 bg-opacity-100">
+        <nav className={moved ? movedStyle : topStyle}>
             <div className="flex items-center justify-between mx-auto px-4 py-2">
                 <a className="flex items-center space-x-3 rtl:space-x-reverse">
                     {/* <p className="text-white font-bold font-serif text-5xl p-7"> eldi </p> */}
-                    <img src="eldilogo.png" width={150} height={150} className="p-7"/>
+                    <img src="eldilogo.png" width={110} height={110} className="p-3"/>
                 </a>
 
                 <div>

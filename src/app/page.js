@@ -1,10 +1,38 @@
 "use client"
 import { useState, useEffect } from 'react';
 import Navbar from '../components/navbar';
+import React, { useRef } from "react";
 
 export default function Home() {
   const [windowWidth, setWindowWidth] = useState(0);
   const [windowHeight, setWindowHeight] = useState(0);
+
+  const popularRef = useRef(null);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsInView(true);
+                } else {
+                    setIsInView(false);
+                }
+            },
+        
+            { threshold: 0.97 }
+        );
+            
+        if (popularRef.current) {
+            observer.observe(popularRef.current);
+        }
+            
+        return () => {
+            if (popularRef.current) {
+                observer.unobserve(popularRef.current);
+            }
+        };
+    }, [isInView]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -20,7 +48,7 @@ export default function Home() {
 
   return (
     <div>
-      <Navbar/>
+      <Navbar moved={isInView}/>
 
       <div className="w-full bg-black">
         
@@ -43,7 +71,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full bg-stone-100">
+      <div className="w-full bg-stone-100" ref={popularRef}>
         <div className="max-w-screen-xl mx-auto py-30 flex flex-col gap-17 items-center justify-center relative overflow-hidden">
           {/* <div className="flex flex-col gap-3">
             
@@ -76,7 +104,7 @@ export default function Home() {
             </div>
           </div>
 
-          <button className="w-fit bg-neutral-800 font-serif font-bold p-3 hover:bg-orange-900 rounded-md"> View all </button>
+          <button className="w-fit bg-neutral-800 font-serif font-bold p-3 hover:bg-neutral-700 rounded-md"> View all </button>
 
         </div>
       </div>
