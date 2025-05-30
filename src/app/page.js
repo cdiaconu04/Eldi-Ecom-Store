@@ -18,14 +18,25 @@ export default function Home() {
   });
 
   return (
-    <div className="min-h-screen bg-white">
-      <div className="absolute inset-0 pointer-events-none h-screen">
-        <img src="/leather.png" className="w-full h-screen object-cover" width={windowWidth} height={windowHeight}/>
-        
+    <div className="w-full bg-black">
+
+      {/* Background */}
+      <div className="absolute inset-0 pointer-events-none h-screen z-0">
+        <img src="/leather.png" className="w-full h-screen object-cover opacity-80" width={windowWidth} height={windowHeight}/>
       </div>
 
-      <div>
-        
+      {/* Foreground */}
+      
+
+      <div className="max-w-screen-xl mx-auto p-4 min-h-screen flex items-center justify-between relative overflow-hidden">
+        <div className="flex flex-col gap-3">
+          
+          <h1 className="text-white text-9xl font-bold z-10 font-serif">Eldi</h1>
+          <h2 className="text-white text-3xl font-bold z-10 font-serif"> Elegant, Timeless, Tailored. </h2>
+
+          <button className="w-fit bg-orange-950 font-serif font-bold p-3 hover:bg-orange-900 rounded-md"> View Products </button>
+
+        </div>
       </div>
 
     </div>
