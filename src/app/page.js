@@ -31,10 +31,11 @@ export default function Home() {
 
         {/* Foreground */}
         <div className="max-w-screen-xl mx-auto p-4 min-h-screen flex items-center justify-between relative overflow-hidden">
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-4">
             
-            <h1 className="text-white text-9xl font-bold z-10 font-serif">eldi</h1>
-            <h2 className="text-white text-3xl font-bold z-10 font-serif"> Elegant, Timeless, Leather Goods. </h2>
+            {/* <h1 className="text-white text-9xl font-bold z-10 font-serif">eldi</h1> */}
+            <img src="/eldilogocropped.png" width={220} height={220} className="py-2"/>
+            <h2 className="text-white text-3xl font-bold z-10 font-serif py-3"> Elegant, Timeless, Leather Goods. </h2>
 
             <button className="w-fit bg-orange-950 font-serif font-bold p-3 hover:bg-orange-900 rounded-md"> View Products </button>
 

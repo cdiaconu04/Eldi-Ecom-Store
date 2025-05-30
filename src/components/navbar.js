@@ -3,7 +3,8 @@ export default function Navbar() {
         <nav className="fixed top-0 left-0 w-full z-50 bg-opacity-100">
             <div className="flex items-center justify-between mx-auto px-4 py-2">
                 <a className="flex items-center space-x-3 rtl:space-x-reverse">
-                    <p className="text-white font-bold font-serif text-5xl p-7"> eldi </p>
+                    {/* <p className="text-white font-bold font-serif text-5xl p-7"> eldi </p> */}
+                    <img src="eldilogo.png" width={150} height={150} className="p-7"/>
                 </a>
 
                 <div>
