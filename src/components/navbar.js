@@ -1,6 +1,6 @@
 export default function Navbar({moved}) {
     const topStyle = "fixed top-0 left-0 w-full z-50 bg-opacity-100"
-    const movedStyle = "fixed top-0 left-0 w-full z-50 bg-neutral-950"
+    const movedStyle = "fixed top-0 left-0 w-full z-50 bg-stone-900"
 
     return (
         <nav className={moved ? movedStyle : topStyle}>

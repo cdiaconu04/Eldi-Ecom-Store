@@ -11,28 +11,28 @@ export default function Home() {
   const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsInView(true);
-                } else {
-                    setIsInView(false);
-                }
-            },
-        
-            { threshold: 0.97 }
-        );
-            
-        if (popularRef.current) {
-            observer.observe(popularRef.current);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+        } else {
+          setIsInView(false);
         }
+      },
+        
+      { threshold: 0.97 }
+    );
             
-        return () => {
-            if (popularRef.current) {
-                observer.unobserve(popularRef.current);
-            }
-        };
-    }, [isInView]);
+    if (popularRef.current) {
+      observer.observe(popularRef.current);
+    }
+            
+    return () => {
+      if (popularRef.current) {
+        observer.unobserve(popularRef.current);
+      }
+    };
+  }, [isInView]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -50,6 +50,7 @@ export default function Home() {
     <div>
       <Navbar moved={isInView}/>
 
+      {/* Intro section */}
       <div className="w-full bg-black">
         
         {/* Background */}
@@ -71,17 +72,10 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Popular products */}
       <div className="w-full bg-stone-100" ref={popularRef}>
         <div className="max-w-screen-xl mx-auto py-30 flex flex-col gap-17 items-center justify-center relative overflow-hidden">
-          {/* <div className="flex flex-col gap-3">
-            
-            <h1 className="text-white text-9xl font-bold z-10 font-serif">eldi</h1>
-            <h2 className="text-white text-3xl font-bold z-10 font-serif"> Elegant, Timeless, Leather Goods. </h2>
-
-            <button className="w-fit bg-orange-950 font-serif font-bold p-3 hover:bg-orange-900 rounded-md"> View Products </button>
-
-          </div> */}
-
+          
           <div>
             <h2 className="text-4xl font-bold font-serif text-black"> Popular Products </h2>
           </div>
@@ -106,6 +100,34 @@ export default function Home() {
 
           <button className="w-fit bg-neutral-800 font-serif font-bold p-3 hover:bg-neutral-700 rounded-md"> View all </button>
 
+        </div>
+      </div>
+
+      {/* About */}
+      <div className="w-full bg-stone-300">
+        <div className="max-w-screen-xl mx-auto py-30 flex flex-col gap-13 relative overflow-hidden">
+          <h2 className="text-4xl font-serif font-bold text-black"> About Us </h2>
+
+          <div className="grid grid-cols-3 gap-13">
+            <div className="flex flex-col gap-17"> 
+              <img src="/crafting.png" width={350} height={350} className="rounded-md shadow-lg"/>
+            </div>
+
+            <div className="col-span-2 flex items-center justify-between">
+
+              <div className="flex flex-col gap-8">
+                <p className="text-black text-lg font-serif col-span-2">
+                  ElDi offers handmade leather products focused on quality, minimalism, and functionality. We made it our mission to  fascinate with the  craft of the artisan whose lasting creations are in harmony with the environment and inviting to a lifestyle that is aware of our impact on the planet.
+                </p>
+                <p className="text-black text-lg font-serif">
+                  Our products are handmade in a family run atelier in the Greater Toronto Area, Canada, using traditional techniques and leathers from the best tanneries in the world.  Either ordered for yourself or for someone you care about, the product is delivered in a package that adds to the excitement of receiving a very special gift.
+                </p>
+              </div>
+            
+            </div>
+
+          </div>
+          
         </div>
       </div>
       
