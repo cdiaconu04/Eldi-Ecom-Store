@@ -13,7 +13,7 @@ export default function Footer() {
 
                     <div className="flex flex-col gap-1">
                         <p className="text-white text-lg font-bold font-serif"> Support </p>
-                        <p className="text-white text-md font-serif"> FAQs </p>
+                        <a className="text-white text-md font-serif" href="/faq"> FAQs </a>
                         <p className="text-white text-md font-serif"> Terms and Conditions </p>
                         <p className="text-white text-md font-serif"> Contact us </p>
                     </div>

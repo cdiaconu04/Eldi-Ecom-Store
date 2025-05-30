@@ -29,7 +29,8 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {isHomePage ? {children} : <div> <Navbar/> {children} </div>}
+        {isHomePage ? {children} : <div> <Navbar moved={true}/> {children} </div>}
+        
         <Footer />
       </body>
     </html>
