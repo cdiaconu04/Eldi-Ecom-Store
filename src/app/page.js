@@ -19,28 +19,68 @@ export default function Home() {
   });
 
   return (
-    <div className="w-full bg-black">
-
+    <div>
       <Navbar/>
 
-      {/* Background */}
-      <div className="absolute inset-0 pointer-events-none h-screen z-0">
-        <img src="/leather.png" className="w-full h-screen object-cover opacity-70" width={windowWidth} height={windowHeight}/>
+      <div className="w-full bg-black">
+        
+        {/* Background */}
+        <div className="absolute inset-0 pointer-events-none h-screen z-0">
+          <img src="/leather.png" className="w-full h-screen object-cover opacity-70" width={windowWidth} height={windowHeight}/>
+        </div>
+
+        {/* Foreground */}
+        <div className="max-w-screen-xl mx-auto p-4 min-h-screen flex items-center justify-between relative overflow-hidden">
+          <div className="flex flex-col gap-3">
+            
+            <h1 className="text-white text-9xl font-bold z-10 font-serif">eldi</h1>
+            <h2 className="text-white text-3xl font-bold z-10 font-serif"> Elegant, Timeless, Leather Goods. </h2>
+
+            <button className="w-fit bg-orange-950 font-serif font-bold p-3 hover:bg-orange-900 rounded-md"> View Products </button>
+
+          </div>
+        </div>
       </div>
 
-      {/* Foreground */}
-      
+      <div className="w-full bg-stone-100">
+        <div className="max-w-screen-xl mx-auto py-30 flex flex-col gap-17 items-center justify-center relative overflow-hidden">
+          {/* <div className="flex flex-col gap-3">
+            
+            <h1 className="text-white text-9xl font-bold z-10 font-serif">eldi</h1>
+            <h2 className="text-white text-3xl font-bold z-10 font-serif"> Elegant, Timeless, Leather Goods. </h2>
 
-      <div className="max-w-screen-xl mx-auto p-4 min-h-screen flex items-center justify-between relative overflow-hidden">
-        <div className="flex flex-col gap-3">
-          
-          <h1 className="text-white text-9xl font-bold z-10 font-serif">eldi</h1>
-          <h2 className="text-white text-3xl font-bold z-10 font-serif"> Elegant, Timeless, Leather Goods. </h2>
+            <button className="w-fit bg-orange-950 font-serif font-bold p-3 hover:bg-orange-900 rounded-md"> View Products </button>
 
-          <button className="w-fit bg-orange-950 font-serif font-bold p-3 hover:bg-orange-900 rounded-md"> View Products </button>
+          </div> */}
+
+          <div>
+            <h2 className="text-4xl font-bold font-serif text-black"> Popular Products </h2>
+          </div>
+
+          <div className="grid grid-cols-3 gap-13">
+
+            <div className="flex flex-col items-center justify-center gap-5">
+              <img src="/bayfullsizewallet.png" className="shadow-xl rounded-md" width={320} height={320}/>
+              <p className="text-black text-lg font-serif font-bold"> “Bay” Full Size Wallet </p>
+            </div>
+
+            <div className="flex flex-col items-center justify-center gap-5">
+              <img src="/finchcardswallet.png" className="shadow-xl rounded-md" width={320} height={320}/>
+              <p className="text-black text-lg font-serif font-bold"> “Finch” Cards Wallet </p>
+            </div>
+
+            <div className="flex flex-col items-center justify-center gap-5">
+              <img src="/westqueengothbracelet.png" className="shadow-xl rounded-md" width={320} height={320}/>
+              <p className="text-black text-lg font-serif font-bold"> “West Queen” Goth Cuff Bracelet </p>
+            </div>
+          </div>
+
+          <button className="w-fit bg-neutral-800 font-serif font-bold p-3 hover:bg-orange-900 rounded-md"> View all </button>
 
         </div>
       </div>
+      
+      
 
     </div>
   );
