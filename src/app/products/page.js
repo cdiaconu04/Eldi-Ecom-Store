@@ -15,8 +15,8 @@ export default function Products() {
                             <img src="/bayfullsizewallet.png" className="shadow-xl rounded-md" width={250} height={250}/>
 
                             <div>
-                                <p className="text-gray-950 text-md font-serif font-bold"> “Bay” Full Size Wallet </p>
-                                <p className="text-gray-900 text-sm font-serif font-bold text-center"> CAD $100 </p>
+                                <p className="text-gray-950 text-md font-serif"> “Bay” Full Size Wallet </p>
+                                <p className="text-gray-950 text-sm font-serif font-bold text-center"> CAD $100 </p>
                             </div>
                             
                         </div>
@@ -25,8 +25,8 @@ export default function Products() {
                             <img src="/bayviewcardswallet.png" className="shadow-xl rounded-md" width={250} height={250}/>
 
                             <div>
-                                <p className="text-gray-950 text-md font-serif font-bold"> “Bayview” Cards Wallet </p>
-                                <p className="text-gray-900 text-sm font-serif font-bold text-center"> CAD $100 </p>
+                                <p className="text-gray-950 text-md font-serif"> “Bayview” Cards Wallet </p>
+                                <p className="text-gray-950 text-sm font-serif font-bold text-center"> CAD $100 </p>
                             </div>
                             
                         </div>
@@ -35,8 +35,8 @@ export default function Products() {
                             <img src="/bayviewwatchstrap.png" className="shadow-xl rounded-md" width={250} height={250}/>
 
                             <div>
-                                <p className="text-gray-950 text-md font-serif font-bold"> “Bayview” Watch Strap </p>
-                                <p className="text-gray-900 text-sm font-serif font-bold text-center"> CAD $100 </p>
+                                <p className="text-gray-950 text-md font-serif"> “Bayview” Watch Strap </p>
+                                <p className="text-gray-950 text-sm font-serif font-bold text-center"> CAD $100 </p>
                             </div>
                             
                         </div>
@@ -45,8 +45,8 @@ export default function Products() {
                             <img src="/finchcardswallet.png" className="shadow-xl rounded-md" width={250} height={250}/>
 
                             <div>
-                                <p className="text-gray-950 text-md font-serif font-bold"> “Finch” Cards Wallet </p>
-                                <p className="text-gray-900 text-sm font-serif font-bold text-center"> CAD $100 </p>
+                                <p className="text-gray-950 text-md font-serif"> “Finch” Cards Wallet </p>
+                                <p className="text-gray-950 text-sm font-serif font-bold text-center"> CAD $100 </p>
                             </div>
                             
                         </div>
@@ -55,8 +55,8 @@ export default function Products() {
                             <img src="/westqueengothbracelet.png" className="shadow-xl rounded-md" width={250} height={250}/>
 
                             <div>
-                                <p className="text-gray-950 text-md font-serif font-bold"> “West Queen” Goth Cuff Bracelet </p>
-                                <p className="text-gray-900 text-sm font-serif font-bold text-center"> CAD $100 </p>
+                                <p className="text-gray-950 text-md font-serif"> “West Queen” Goth Cuff Bracelet </p>
+                                <p className="text-gray-950 text-sm font-serif font-bold text-center"> CAD $100 </p>
                             </div>
                             
                         </div>

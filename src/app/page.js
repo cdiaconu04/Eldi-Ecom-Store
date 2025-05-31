@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
 import React, { useRef } from "react";
+import { motion } from "motion/react"
 
 export default function Home() {
   const [windowWidth, setWindowWidth] = useState(0);
@@ -66,9 +67,13 @@ export default function Home() {
             
             {/* <h1 className="text-white text-9xl font-bold z-10 font-serif">eldi</h1> */}
             <img src="/eldilogocropped.png" width={220} height={220} className="py-2"/>
+            
             <h2 className="text-white text-3xl font-bold z-10 font-serif py-3"> Elegant, Timeless, Leather Goods. </h2>
-
-            <button className="w-fit bg-orange-950 font-serif font-bold p-3 hover:bg-orange-900 rounded-md"> View Products </button>
+            
+            <a href="/products">
+              <button className="w-fit bg-orange-950 font-serif font-bold p-3 hover:bg-orange-900 rounded-md"> View Products </button>
+            </a>
+            
 
           </div>
         </div>
@@ -76,31 +81,53 @@ export default function Home() {
 
       {/* Popular products */}
       <div className="w-full bg-stone-100">
-        <div className="max-w-screen-xl mx-auto py-30 flex flex-col gap-17 items-center justify-center relative overflow-hidden">
+        <div className="max-w-screen-xl mx-auto py-20 flex flex-col gap-17 items-center justify-center relative overflow-hidden">
           
           <div>
-            <h2 className="text-4xl font-bold font-serif text-black"> Popular Products </h2>
+            <h2 className="text-4xl font-bold font-serif text-black"> Featured Products </h2>
           </div>
 
-          <div className="grid grid-cols-3 gap-13">
+          <div className="grid grid-cols-3 gap-10">
 
-            <div className="flex flex-col items-center justify-center gap-5">
+            <motion.div className="flex flex-col items-center justify-center gap-5 hover:bg-white hover:rounded-xl p-5 hover:shadow-xl transition-all duration-200"
+              whileHover={{ scale: 1.02 }}>
               <img src="/bayfullsizewallet.png" className="shadow-xl rounded-md" width={320} height={320}/>
-              <p className="text-gray-950 text-lg font-serif font-bold"> “Bay” Full Size Wallet </p>
-            </div>
 
-            <div className="flex flex-col items-center justify-center gap-5">
+              <div className="flex flex-col">
+                <p className="text-gray-950 text-lg font-serif"> “Bay” Full Size Wallet </p>
+                <p className="text-gray-950 text-md font-serif font-bold text-center"> CAD $100 </p>
+              </div>
+              
+            </motion.div>
+
+            <motion.div className="flex flex-col items-center justify-center gap-5 hover:bg-white hover:rounded-xl p-5 hover:shadow-xl transition-all duration-200"
+              whileHover={{ scale: 1.02 }}>
               <img src="/finchcardswallet.png" className="shadow-xl rounded-md" width={320} height={320}/>
-              <p className="text-gray-950 text-lg font-serif font-bold"> “Finch” Cards Wallet </p>
-            </div>
 
-            <div className="flex flex-col items-center justify-center gap-5">
+              <div className="flex flex-col">
+                <p className="text-gray-950 text-lg font-serif"> “Finch” Cards Wallet </p>
+                <p className="text-gray-950 text-md font-serif font-bold text-center"> CAD $100 </p>
+              </div>
+              
+            </motion.div>
+
+            <motion.div className="flex flex-col items-center justify-center gap-5 hover:bg-white hover:rounded-xl p-5 hover:shadow-xl transition-all duration-200"
+              whileHover={{ scale: 1.02 }}>
               <img src="/westqueengothbracelet.png" className="shadow-xl rounded-md" width={320} height={320}/>
-              <p className="text-gray-950 text-lg font-serif font-bold"> “West Queen” Goth Cuff Bracelet </p>
-            </div>
+
+              <div className="flex flex-col">
+                <p className="text-gray-950 text-lg font-serif"> “West Queen” Goth Cuff Bracelet </p>
+                <p className="text-gray-950 text-md font-serif font-bold text-center"> CAD $100 </p>
+              </div>
+              
+            </motion.div>
           </div>
 
-          <button className="w-fit bg-neutral-800 font-serif font-bold p-3 hover:bg-neutral-700 rounded-md"> View all </button>
+          
+          <a href="/products">
+            <button className="w-fit bg-neutral-800 font-serif font-bold p-3 hover:bg-neutral-700 rounded-md"> View all </button>
+          </a>
+          
 
         </div>
       </div>
