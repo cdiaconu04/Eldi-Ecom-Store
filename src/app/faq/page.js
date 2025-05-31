@@ -1,8 +1,9 @@
 "use client"
-
+import Navbar from '../../components/navbar';
 export default function FAQ() {
     return (
         <div>
+            <Navbar moved={true}/>
             <div className="w-full bg-stone-200">
                 <div className="max-w-screen-xl mx-auto py-30 flex flex-col gap-10 items-center justify-center relative overflow-hidden">
                     <h1 className="text-4xl font-bold font-serif text-black"> Frequently Asked Questions </h1>

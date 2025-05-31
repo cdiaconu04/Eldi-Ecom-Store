@@ -21,15 +21,21 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 
-  const pathname = headers().get('x-next-url')
-  const isHomePage = pathname === '/'
+  // const pathname = headers().get('x-next-url')
+  
+
+  const headerList = headers();
+  const pathname = headerList.get("x-current-path");
+
+  const isHomePage = pathname == '/'
 
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {isHomePage ? {children} : <div> <Navbar moved={true}/> {children} </div>}
+        {/* {isHomePage ? {children} : <div> <Navbar moved={true}/> {children} </div>} */}
+        {children}
         
         <Footer />
       </body>

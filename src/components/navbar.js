@@ -2,8 +2,10 @@ export default function Navbar({moved}) {
     const topStyle = "fixed top-0 left-0 w-full z-50 bg-opacity-100"
     const movedStyle = "fixed top-0 left-0 w-full z-50 bg-stone-900"
 
+    let finalStyle = moved ? movedStyle : topStyle;
+
     return (
-        <nav className={moved ? movedStyle : topStyle}>
+        <nav className={finalStyle}>
             <div className="flex items-center justify-between mx-auto px-4 py-2">
                 <a className="flex items-center space-x-3 rtl:space-x-reverse">
                     {/* <p className="text-white font-bold font-serif text-5xl p-7"> eldi </p> */}
@@ -27,4 +29,3 @@ export default function Navbar({moved}) {
         </nav>
     )
 }
-
