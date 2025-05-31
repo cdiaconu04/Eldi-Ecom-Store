@@ -134,7 +134,7 @@ export default function Home() {
 
       {/* About */}
       <div className="w-full bg-stone-300">
-        <div className="max-w-screen-xl mx-auto py-30 flex flex-col gap-13 relative overflow-hidden">
+        <div className="max-w-screen-xl mx-auto py-20 flex flex-col gap-13 relative overflow-hidden">
           <h2 className="text-4xl font-serif font-bold text-black"> About Us </h2>
 
           <div className="grid grid-cols-3 gap-13">
