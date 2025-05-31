@@ -15,13 +15,10 @@ export default function Navbar({moved}) {
                 <div>
                     <ul className="font-medium flex flex-row space-x-2 rtl:space-x-reverse">
                         <li className="flex flex-col">
-                            <a className="group block p-4 text-white font-bold rounded-sm border-0 hover:text-white transition duration-300"> About </a>
+                            <a className="group block p-4 text-white font-bold rounded-sm border-0 hover:text-white transition duration-300 hover:underline" href="/products"> Products </a>
                         </li>
                         <li className="flex flex-col">
-                            <a className="group block p-4 text-white font-bold rounded-sm border-0 hover:text-white transition duration-300"> Products </a>
-                        </li>
-                        <li className="flex flex-col">
-                            <a className="group block p-4 text-white font-bold rounded-sm border-0 hover:text-white transition duration-300"> Contact us </a>
+                            <a className="group block p-4 text-white font-bold rounded-sm border-0 hover:text-white transition duration-300 hover:underline"> Contact us </a>
                         </li>
                     </ul>
                 </div>

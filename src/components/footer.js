@@ -7,15 +7,16 @@ export default function Footer() {
                 <div className="flex flex-row gap-30">
                     <div className="flex flex-col gap-1">
                         <p className="text-white text-lg font-bold font-serif"> Main </p>
-                        <p className="text-white text-md font-serif"> About </p>
-                        <p className="text-white text-md font-serif"> Products </p>
+                        <a className="text-white text-md font-serif hover:underline" href="/"> Landing </a>
+                        <p className="text-white text-md font-serif hover:underline"> About </p>
+                        <p className="text-white text-md font-serif hover:underline"> Products </p>
                     </div>
 
                     <div className="flex flex-col gap-1">
                         <p className="text-white text-lg font-bold font-serif"> Support </p>
-                        <a className="text-white text-md font-serif" href="/faq"> FAQs </a>
-                        <a className="text-white text-md font-serif" href="/terms-conditions"> Terms and Conditions </a>
-                        <p className="text-white text-md font-serif"> Contact us </p>
+                        <a className="text-white text-md font-serif hover:underline" href="/faq"> FAQs </a>
+                        <a className="text-white text-md font-serif hover:underline" href="/terms-conditions"> Terms and Conditions </a>
+                        <p className="text-white text-md font-serif hover:underline"> Contact us </p>
                     </div>
                 </div>
 
