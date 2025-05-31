@@ -86,17 +86,17 @@ export default function Home() {
 
             <div className="flex flex-col items-center justify-center gap-5">
               <img src="/bayfullsizewallet.png" className="shadow-xl rounded-md" width={320} height={320}/>
-              <p className="text-black text-lg font-serif font-bold"> “Bay” Full Size Wallet </p>
+              <p className="text-gray-950 text-lg font-serif font-bold"> “Bay” Full Size Wallet </p>
             </div>
 
             <div className="flex flex-col items-center justify-center gap-5">
               <img src="/finchcardswallet.png" className="shadow-xl rounded-md" width={320} height={320}/>
-              <p className="text-black text-lg font-serif font-bold"> “Finch” Cards Wallet </p>
+              <p className="text-gray-950 text-lg font-serif font-bold"> “Finch” Cards Wallet </p>
             </div>
 
             <div className="flex flex-col items-center justify-center gap-5">
               <img src="/westqueengothbracelet.png" className="shadow-xl rounded-md" width={320} height={320}/>
-              <p className="text-black text-lg font-serif font-bold"> “West Queen” Goth Cuff Bracelet </p>
+              <p className="text-gray-950 text-lg font-serif font-bold"> “West Queen” Goth Cuff Bracelet </p>
             </div>
           </div>
 
@@ -118,10 +118,10 @@ export default function Home() {
             <div className="col-span-2 flex items-center justify-between">
 
               <div className="flex flex-col gap-8">
-                <p className="text-black text-lg font-serif col-span-2">
+                <p className="text-gray-800 text-lg font-serif col-span-2">
                   ElDi offers handmade leather products focused on quality, minimalism, and functionality. We made it our mission to  fascinate with the  craft of the artisan whose lasting creations are in harmony with the environment and inviting to a lifestyle that is aware of our impact on the planet.
                 </p>
-                <p className="text-black text-lg font-serif">
+                <p className="text-gray-800 text-lg font-serif">
                   Our products are handmade in a family run atelier in the Greater Toronto Area, Canada, using traditional techniques and leathers from the best tanneries in the world.  Either ordered for yourself or for someone you care about, the product is delivered in a package that adds to the excitement of receiving a very special gift.
                 </p>
               </div>
