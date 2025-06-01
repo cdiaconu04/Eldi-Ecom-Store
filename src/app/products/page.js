@@ -3,21 +3,22 @@ import Navbar from '../../components/navbar';
 import { useState } from "react";
 import { motion } from "motion/react"
 import { ChevronRight } from 'lucide-react';
+import { products } from '../../data/products.js';
 
 export default function Products() {
     const [typeFilter, setTypeFilter] = useState("All");
 
-    const allProducts = [
-        { id: 1, name: "“Bay” Full Size Wallet", type: "Wallets", pic: "/bayfullsizewallet.png", price: "$100.00" },
-        { id: 2, name: "“Bayview” Cards Wallet", type: "Wallets", pic: "/bayviewcardswallet.png", price: "$100.00" },
-        { id: 3, name: "“Bayview” Watch Strap", type: "Watch straps", pic: "/bayviewwatchstrap.png", price: "$100.00" },
-        { id: 4, name: "“Finch” Cards Wallet", type: "Wallets", pic: "/finchcardswallet.png", price: "$100.00" },
-        { id: 5, name: "“West Queen” Goth Cuff Bracelet", type: "Bracelets", pic: "/westqueengothbracelet.png", price: "$100.00" },
-    ];
+    // const allProducts = [
+    //     { id: 1, name: "“Bay” Full Size Wallet", type: "Wallets", pic: "/products/bayfullsizewallet/pic1.png", price: "$100.00" },
+    //     { id: 2, name: "“Bayview” Cards Wallet", type: "Wallets", pic: "/products/bayviewcardswallet/pic1.png", price: "$100.00" },
+    //     { id: 3, name: "“Bayview” Watch Strap", type: "Watch straps", pic: "/products/bayviewwatchstrap/pic1.png", price: "$100.00" },
+    //     { id: 4, name: "“Finch” Cards Wallet", type: "Wallets", pic: "/products/finchcardswallet/pic1.png", price: "$100.00" },
+    //     { id: 5, name: "“West Queen” Goth Cuff Bracelet", type: "Bracelets", pic: "/products/westqueengothbracelet/pic1.png", price: "$100.00" },
+    // ];
 
     const types = ["All", "Bracelets", "Wallets", "Watch straps"];
 
-    const filteredProducts = typeFilter === "All" ? allProducts : allProducts.filter(product => product.type === typeFilter);
+    const filteredProducts = typeFilter === "All" ? products : products.filter(product => product.type === typeFilter);
 
     return (
         <div>
@@ -97,7 +98,7 @@ export default function Products() {
                                 <motion.div key={product.id} className="flex flex-col items-center justify-center gap-2 hover:bg-white hover:rounded-xl p-3 hover:shadow-xl transition-all duration-200"
                                     whileHover={{ scale: 1.02 }}
                                 >
-                                    <img src={product.pic} className="shadow-xl rounded-md" width={250} height={250}/>
+                                    <img src={product.pics[0]} className="shadow-xl rounded-md" width={250} height={250}/>
                                     <div className="flex flex-col items-center justify-center">
                                         <p className="text-gray-950 text-md font-serif"> {product.name} </p>
                                         <p className="text-gray-950 text-sm font-serif font-bold text-center"> CA{product.price} </p>
