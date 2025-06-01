@@ -21,19 +21,19 @@ export const products = [
         ],
         price: "$100.00",
         description: "Handmade, full grain, Buttero vegetable tanned leather bifold wallet, full size wallet, men's cards wallet, personalized leather wallet.",
-        featured: true,
+        featured: false,
     },
     {
         id: 3,
         slug: "bayview-watch-strap",
         name: "“Bayview” Watch Strap",
-        type: "Wallets",
+        type: "Watch straps",
         pics: [
             "/products/bayviewwatchstrap/pic1.png",
         ],
         price: "$100.00",
         description: "Handmade, full grain, Buttero vegetable tanned leather bifold wallet, full size wallet, men's cards wallet, personalized leather wallet.",
-        featured: true,
+        featured: false,
     },
     {
         id: 4,

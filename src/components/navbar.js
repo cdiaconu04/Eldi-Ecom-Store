@@ -1,8 +1,15 @@
+"use client";
+import { usePathname } from "next/navigation";
 export default function Navbar({moved}) {
     const topStyle = "fixed top-0 left-0 w-full z-50 bg-opacity-100"
     const movedStyle = "fixed top-0 left-0 w-full z-50 bg-stone-900"
 
     let finalStyle = moved ? movedStyle : topStyle;
+
+    const pathname = usePathname()
+    
+    let productsStyle = pathname === "/products" ? "group block p-4 text-gray-950 bg-white font-bold rounded-full border-0 transition duration-300" :
+        "group block p-4 text-white font-bold rounded-sm border-0 hover:text-white transition duration-300 hover:underline"
 
     return (
         <nav className={finalStyle}>

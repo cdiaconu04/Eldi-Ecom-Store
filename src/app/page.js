@@ -4,6 +4,7 @@ import Navbar from '../components/navbar';
 import Footer from '../components/footer';
 import React, { useRef } from "react";
 import { motion } from "motion/react"
+import { products } from '../data/products.js';
 
 export default function Home() {
   const [windowWidth, setWindowWidth] = useState(0);
@@ -11,6 +12,9 @@ export default function Home() {
 
   const popularRef = useRef(null);
   const [isInView, setIsInView] = useState(false);
+
+  const [featuredFilter, setFeaturedFilter] = useState(true);
+  const featuredProducts = products.filter(product => product.featured === true)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -91,7 +95,7 @@ export default function Home() {
 
             <motion.div className="flex flex-col items-center justify-center gap-5 hover:bg-white hover:rounded-xl p-5 hover:shadow-xl transition-all duration-200"
               whileHover={{ scale: 1.02 }}>
-              <img src="/bayfullsizewallet.png" className="shadow-xl rounded-md" width={320} height={320}/>
+              <img src="/products/bayfullsizewallet/pic1.png" className="shadow-xl rounded-md" width={320} height={320}/>
 
               <div className="flex flex-col">
                 <p className="text-gray-950 text-lg font-serif"> “Bay” Full Size Wallet </p>
@@ -102,7 +106,7 @@ export default function Home() {
 
             <motion.div className="flex flex-col items-center justify-center gap-5 hover:bg-white hover:rounded-xl p-5 hover:shadow-xl transition-all duration-200"
               whileHover={{ scale: 1.02 }}>
-              <img src="/finchcardswallet.png" className="shadow-xl rounded-md" width={320} height={320}/>
+              <img src="/products/finchcardswallet/pic1.png" className="shadow-xl rounded-md" width={320} height={320}/>
 
               <div className="flex flex-col">
                 <p className="text-gray-950 text-lg font-serif"> “Finch” Cards Wallet </p>
@@ -113,7 +117,7 @@ export default function Home() {
 
             <motion.div className="flex flex-col items-center justify-center gap-5 hover:bg-white hover:rounded-xl p-5 hover:shadow-xl transition-all duration-200"
               whileHover={{ scale: 1.02 }}>
-              <img src="/westqueengothbracelet.png" className="shadow-xl rounded-md" width={320} height={320}/>
+              <img src="/products/westqueengothbracelet/pic1.png" className="shadow-xl rounded-md" width={320} height={320}/>
 
               <div className="flex flex-col">
                 <p className="text-gray-950 text-lg font-serif"> “West Queen” Goth Cuff Bracelet </p>

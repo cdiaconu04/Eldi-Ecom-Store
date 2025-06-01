@@ -1,7 +1,7 @@
 export default function Footer() {
     return (
         <div className="w-full bg-zinc-900">
-            <div className="max-w-screen-xl mx-auto py-14 flex flex-row gap-30 relative overflow-hidden justify-center items-center">
+            <div className="max-w-screen-xl mx-auto py-10 flex flex-row gap-30 relative overflow-hidden justify-center items-center">
                 <img src="eldilogo.png" width={90} height={90} className="p-3"/>
 
                 <div className="flex flex-row gap-30">
