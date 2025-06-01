@@ -61,6 +61,10 @@ export default function ProductPage() {
                                     whileHover={{ scale: 1.03 }}
                                     whileTap={{ scale: 0.95 }}
                                 > Add to Cart </motion.button>
+                                <motion.button className="bg-gray-800 rounded-full text-white text-lg font-serif px-20 py-3 hover:bg-gray-950"
+                                    whileHover={{ scale: 1.03 }}
+                                    whileTap={{ scale: 0.95 }}
+                                > View on Etsy </motion.button>
                             </div>
 
 

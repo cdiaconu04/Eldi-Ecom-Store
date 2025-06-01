@@ -32,30 +32,32 @@ export default function Products() {
 
                     <div className="flex flex-row gap-25">
 
-                        <div className="flex flex-col gap-10">
+                        <div className="flex flex-col gap-7">
 
-                            <div className="flex flex-col">
+                            <div className="flex flex-col gap-2">
                                 <a href="https://www.etsy.com/ca/shop/ElDiLeatherGoods" className="flex flex-row items-center justify-center">
-                                    <motion.button className="flex flex-row items-center justify-center p-5"
-                                        whileHover={{ x: 10 }}
+                                    <motion.button className="flex flex-row items-center justify-center px-5 py-2 bg-stone-800 rounded-full hover:bg-stone-950"
+                                        whileHover={{ x: 10, scale: 1.02 }}
+                                        whileTap={{ scale: 0.97 }}
                                     > 
-                                        <p className="font-serif font-bold text-gray-950 hover:underline"> Shop on Etsy </p> 
-                                        <ChevronRight className="text-gray-950"/>
+                                        <p className="font-serif font-bold text-white hover:underline"> Shop on Etsy </p> 
+                                        <ChevronRight className="text-white"/>
                                     </motion.button>
                                 </a>
 
                                 <a href="https://www.etsy.com/ca/shop/ElDiLeatherGoods?ref=shop_profile&listing_id=1125162739#reviews" className="flex flex-row items-center justify-center">
-                                    <motion.button className="flex flex-row items-center justify-center p-5"
-                                        whileHover={{ x: 10 }}
+                                    <motion.button className="flex flex-row items-center justify-center px-5 py-2 bg-stone-800 rounded-full hover:bg-stone-950"
+                                        whileHover={{ x: 10, scale: 1.02 }}
+                                        whileTap={{ scale: 0.97 }}
                                     > 
-                                        <p className="font-serif font-bold text-gray-950 hover:underline"> See Reviews </p> 
-                                        <ChevronRight className="text-gray-950"/>
+                                        <p className="font-serif font-bold text-white hover:underline"> See Reviews </p> 
+                                        <ChevronRight className="text-white"/>
                                     </motion.button>
                                 </a>
                                 
                             </div>
 
-                            <div className="flex flex-col gap-2 justify-center">
+                            <div className="flex flex-col gap-2 justify-center bg-neutral-100 p-3 rounded-lg">
                                 {/* <button className="bg-white font-serif font-bold p-3 hover:bg-neutral-200 rounded-lg text-gray-800 border-solid border-gray-700 border-2"
                                     onClick={() => setTypeFilter("All")}
                                 > All </button>
@@ -79,7 +81,6 @@ export default function Products() {
                                                 value={productType}
                                                 checked={typeFilter === productType}
                                                 onChange={() => setTypeFilter(productType)}
-                                                // onClick={() => setTypeFilter(productType)}
                                                 className="form-radio text-white bg-black border-white focus:ring-0"
                                             />
                                             <span className="text-md text-gray-800 font-serif"> {productType} </span>

@@ -69,7 +69,7 @@ export default function Home() {
 
         {/* Foreground */}
         <div className="max-w-screen-xl mx-auto p-4 min-h-screen flex items-center justify-between relative overflow-hidden">
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 p-8 rounded-lg">
             
             {/* <h1 className="text-white text-9xl font-bold z-10 font-serif">eldi</h1> */}
             <img src="/eldilogocropped.png" width={220} height={220} className="py-2"/>
