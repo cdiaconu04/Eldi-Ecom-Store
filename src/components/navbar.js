@@ -2,7 +2,7 @@
 import { usePathname } from "next/navigation";
 export default function Navbar({moved}) {
     const topStyle = "fixed top-0 left-0 w-full z-50 bg-opacity-100"
-    const movedStyle = "fixed top-0 left-0 w-full z-50 bg-stone-900"
+    const movedStyle = "fixed top-0 left-0 w-full z-50 bg-stone-900 shadow-xl"
 
     let finalStyle = moved ? movedStyle : topStyle;
 
