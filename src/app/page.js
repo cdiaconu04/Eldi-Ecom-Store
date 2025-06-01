@@ -5,6 +5,8 @@ import Footer from '../components/footer';
 import React, { useRef } from "react";
 import { motion } from "motion/react"
 import { products } from '../data/products.js';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 export default function Home() {
   const [windowWidth, setWindowWidth] = useState(0);

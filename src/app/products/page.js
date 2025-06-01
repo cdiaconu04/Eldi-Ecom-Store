@@ -95,19 +95,21 @@ export default function Products() {
                         
                         <div className="grid grid-cols-3 gap-5">
                             {filteredProducts.map(product => (
-                                <motion.div key={product.id} className="flex flex-col items-center justify-center gap-2 hover:bg-white hover:rounded-xl p-3 hover:shadow-xl transition-all duration-200"
-                                    whileHover={{ scale: 1.02 }}
-                                >
-                                    <img src={product.pics[0]} className="shadow-xl rounded-md" width={250} height={250}/>
-                                    <div className="flex flex-col items-center justify-center">
-                                        <p className="text-gray-950 text-md font-serif"> {product.name} </p>
-                                        <p className="text-gray-950 text-sm font-serif font-bold text-center"> CA{product.price} </p>
-                                        
-                                        <div className="bg-green-400 rounded-full flex flex-row items-center justify-center w-fit px-2">
-                                            <p className="text-black text-sm font-serif text-center"> FREE Delivery </p>
+                                <a key={product.id} href={`/products/${product.slug}`}>
+                                    <motion.div className="flex flex-col items-center justify-center gap-2 hover:bg-white hover:rounded-xl p-3 hover:shadow-xl transition-all duration-200"
+                                        whileHover={{ scale: 1.02 }}
+                                    >
+                                        <img src={product.pics[0]} className="shadow-xl rounded-md" width={250} height={250}/>
+                                        <div className="flex flex-col items-center justify-center">
+                                            <p className="text-gray-950 text-md font-serif"> {product.name} </p>
+                                            <p className="text-gray-950 text-sm font-serif font-bold text-center"> CA{product.price} </p>
+                                            
+                                            <div className="bg-green-400 rounded-full flex flex-row items-center justify-center w-fit px-2">
+                                                <p className="text-black text-sm font-serif text-center"> FREE Delivery </p>
+                                            </div>
                                         </div>
-                                    </div>
-                                </motion.div>
+                                    </motion.div>
+                                </a>
                             ))}
                             
                         </div>

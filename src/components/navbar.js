@@ -16,7 +16,7 @@ export default function Navbar({moved}) {
             <div className="flex items-center justify-between mx-auto px-4 py-2">
                 <a className="flex items-center space-x-3 rtl:space-x-reverse" href="/">
                     {/* <p className="text-white font-bold font-serif text-5xl p-7"> eldi </p> */}
-                    <img src="eldilogo.png" width={110} height={110} className="p-3"/>
+                    <img src="/eldilogo.png" width={110} height={110} className="p-3"/>
                 </a>
 
                 <div>
