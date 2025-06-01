@@ -4,17 +4,10 @@ import { useState } from "react";
 import { motion } from "motion/react"
 import { ChevronRight } from 'lucide-react';
 import { products } from '../../data/products.js';
+import { ShoppingCart } from 'lucide-react';
 
 export default function Products() {
     const [typeFilter, setTypeFilter] = useState("All");
-
-    // const allProducts = [
-    //     { id: 1, name: "“Bay” Full Size Wallet", type: "Wallets", pic: "/products/bayfullsizewallet/pic1.png", price: "$100.00" },
-    //     { id: 2, name: "“Bayview” Cards Wallet", type: "Wallets", pic: "/products/bayviewcardswallet/pic1.png", price: "$100.00" },
-    //     { id: 3, name: "“Bayview” Watch Strap", type: "Watch straps", pic: "/products/bayviewwatchstrap/pic1.png", price: "$100.00" },
-    //     { id: 4, name: "“Finch” Cards Wallet", type: "Wallets", pic: "/products/finchcardswallet/pic1.png", price: "$100.00" },
-    //     { id: 5, name: "“West Queen” Goth Cuff Bracelet", type: "Bracelets", pic: "/products/westqueengothbracelet/pic1.png", price: "$100.00" },
-    // ];
 
     const types = ["All", "Bracelets", "Wallets", "Watch straps"];
 
@@ -58,18 +51,6 @@ export default function Products() {
                             </div>
 
                             <div className="flex flex-col gap-2 justify-center bg-neutral-100 p-3 rounded-lg">
-                                {/* <button className="bg-white font-serif font-bold p-3 hover:bg-neutral-200 rounded-lg text-gray-800 border-solid border-gray-700 border-2"
-                                    onClick={() => setTypeFilter("All")}
-                                > All </button>
-                                <button className="bg-white font-serif font-bold p-3 hover:bg-neutral-200 rounded-lg text-gray-800 border-solid border-gray-700 border-2"
-                                    onClick={() => setTypeFilter("Bracelets")}
-                                > Bracelets </button>
-                                <button className="bg-white font-serif font-bold p-3 hover:bg-neutral-200 rounded-lg text-gray-800 border-solid border-gray-700 border-2"
-                                    onClick={() => setTypeFilter("Wallets")}
-                                > Wallets </button>
-                                <button className="bg-white font-serif font-bold p-3 hover:bg-neutral-200 rounded-lg text-gray-800 border-solid border-gray-700 border-2 px-10"
-                                    onClick={() => setTypeFilter("Watch straps")}
-                                > Watch straps </button> */}
 
                                 <p className="text-md text-gray-950 font-serif font-bold"> Product type </p>
 

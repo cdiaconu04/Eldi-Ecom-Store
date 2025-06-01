@@ -77,7 +77,10 @@ export default function Home() {
             <h2 className="text-white text-3xl font-bold z-10 font-serif py-3"> Elegant, Timeless, Leather Goods. </h2>
             
             <a href="/products">
-              <button className="w-fit bg-orange-950 font-serif font-bold p-3 hover:bg-orange-900 rounded-md"> View Products </button>
+              <motion.button className="w-fit bg-stone-800 font-serif font-bold px-5 py-2 hover:bg-stone-950 rounded-full"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
+              > View Products </motion.button>
             </a>
             
 
@@ -95,7 +98,7 @@ export default function Home() {
 
           <div className="grid grid-cols-3 gap-10">
 
-            <motion.div className="flex flex-col items-center justify-center gap-5 hover:bg-white hover:rounded-xl p-5 hover:shadow-xl transition-all duration-200"
+            {/* <motion.div className="flex flex-col items-center justify-center gap-5 hover:bg-white hover:rounded-xl p-5 hover:shadow-xl transition-all duration-200"
               whileHover={{ scale: 1.02 }}>
               <img src="/products/bayfullsizewallet/pic1.png" className="shadow-xl rounded-md" width={320} height={320}/>
 
@@ -126,12 +129,31 @@ export default function Home() {
                 <p className="text-gray-950 text-md font-serif font-bold text-center"> CAD $100 </p>
               </div>
               
-            </motion.div>
+            </motion.div> */}
+            
+
+            {featuredProducts.map(product => (
+              <motion.div key={product.id} className="flex flex-col items-center justify-center gap-5 hover:bg-white hover:rounded-xl p-5 hover:shadow-xl transition-all duration-200"
+                whileHover={{ scale: 1.02 }}
+              >
+                <img src={product.pics[0].pic} className="shadow-xl rounded-md" width={320} height={320}/>
+
+                <div className="flex flex-col">
+                  <p className="text-gray-950 text-lg font-serif"> {product.name} </p>
+                  <p className="text-gray-950 text-md font-serif font-bold text-center"> {product.price} </p>
+                </div>
+
+              </motion.div>
+            ))}
+
           </div>
 
           
           <a href="/products">
-            <button className="w-fit bg-neutral-800 font-serif font-bold p-3 hover:bg-neutral-700 rounded-md"> View all </button>
+            <motion.button className="w-fit bg-stone-800 font-serif font-bold px-5 py-2 hover:bg-stone-950 rounded-full"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
+            > View all </motion.button>
           </a>
           
 
