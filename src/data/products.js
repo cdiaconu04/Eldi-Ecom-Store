@@ -34,8 +34,8 @@ export const products = [
         featured: false,
         personalizable: false,
         personalizationTypes: [
-            "Primary colour",
-            "Secondary colour",
+            {id: 0, name: "Primary colour"},
+            {id: 1, name: "Secondary colour"},
         ],
         personalizationOptions: [
             [
@@ -113,7 +113,16 @@ export const products = [
         price: "$120.00",
         description: "Handmade vegetable tanned leather cuff bracelet, Goth bracelet, Buttero leather bracelet, men's, women's bracelet, Italian leather bracelet.",
         featured: true,
-        personalizable: false,
+        personalizable: true,
+        personalizationTypes: [
+            {id: 0, name: "Colour"},
+        ],
+        personalizationOptions: [
+            [
+                {id: 0, name: "Black"}, {id: 1, name: "Red"},
+            ],
+
+        ],
     },
 
 ]

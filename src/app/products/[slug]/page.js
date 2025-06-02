@@ -12,6 +12,8 @@ export default function ProductPage() {
     const [curPic, setCurPic] = useState(product.pics[0].pic);
     const [curPicId, setCurPicId] = useState(product.pics[0].id);
 
+    const numDropdowns = product.personalizable ? 0 : product.personalizationTypes.length;
+    const [selectedValues, setSelectedValues] = useState(Array(numDropdowns).fill(""));
 
     //   TO EDIT LATER:
     if (!product) return <div>Product not found</div>; 
@@ -30,7 +32,7 @@ export default function ProductPage() {
                             <div className="flex flex-col gap-2 justify-start">
                                 {product.pics.map((pic) => (
                                     <button key={pic.id} onClick={() => {setCurPic(pic.pic); setCurPicId(pic.id)}}>
-                                        <img src={pic.pic} width={170} className={`rounded-md ${curPicId === pic.id ? "" : "opacity-60 hover:opacity-80"}`}/>
+                                        <img src={pic.pic} width={130} className={`rounded-md ${curPicId === pic.id ? "" : "opacity-60 hover:opacity-80"}`}/>
                                     </button>
                                     
                                 ))}
@@ -51,8 +53,66 @@ export default function ProductPage() {
                                 <p className="text-xl font-serif font-bold text-gray-950">CA{product.price}</p>
                                 <p className="text-lg font-serif text-gray-800"> {product.description} </p>
                             </div>
+                            
+                            <div className="flex flex-col gap-8 bg-neutral-100 p-5 rounded-lg shadow-lg relative w-full">
+                                {
+                                    product.personalizable === true ? 
+                                        <div>
 
-                            <div className="flex flex-col gap-3 w-fit">
+                                            {product.personalizationTypes.map((persType) => (
+                                                <div key={persType.id} className="flex flex-col gap-1">
+                                                    <label className="text-lg font-serif text-gray-800 font-bold">{persType.name}</label>
+
+                                                    <select
+                                                        value={selectedValues[persType.id]}
+                                                        // onChange={setSelectedValues => }
+                                                        className="text-lg font-serif text-gray-800 border-gray-400 border-1 rounded-lg p-1" 
+                                                    >
+                                                        <option value="" className="text-lg font-serif text-gray-800"> Select an option </option>
+
+                                                        {
+                                                            product.personalizationOptions[persType.id].map((option) => (
+                                                                <option key={option.id} value={option.name} className="text-lg font-serif text-gray-800">
+                                                                    {option.name}
+                                                                </option>
+                                                            ))
+                                                        }
+
+
+                                                    </select>
+
+                                                </div>
+                                            ))}
+
+                                        </div>
+
+                                    : <div></div>
+                                }
+                                <div className="flex flex-col gap-3 justify-center">
+                                    <motion.button className="bg-neutral-800 rounded-full text-white text-lg font-serif px-20 py-3 hover:bg-neutral-950"
+                                        whileHover={{ scale: 1.03 }}
+                                        whileTap={{ scale: 0.95 }}
+                                    > Buy </motion.button>
+                                    <motion.button className="bg-neutral-800 rounded-full text-white text-lg font-serif px-20 py-3 hover:bg-neutral-950"
+                                        whileHover={{ scale: 1.03 }}
+                                        whileTap={{ scale: 0.95 }}
+                                    > Add to Cart </motion.button>
+                                    <motion.button className="bg-gray-800 rounded-full text-white text-lg font-serif px-20 py-3 hover:bg-gray-950"
+                                        whileHover={{ scale: 1.03 }}
+                                        whileTap={{ scale: 0.95 }}
+                                    > View on Etsy </motion.button>
+                                </div>
+
+                            </div>
+                            
+                            
+
+                            
+                            
+
+                            
+
+                            {/* <div className="flex flex-col gap-3 w-fit">
                                 <motion.button className="bg-neutral-800 rounded-full text-white text-lg font-serif px-20 py-3 hover:bg-neutral-950"
                                     whileHover={{ scale: 1.03 }}
                                     whileTap={{ scale: 0.95 }}
@@ -65,7 +125,7 @@ export default function ProductPage() {
                                     whileHover={{ scale: 1.03 }}
                                     whileTap={{ scale: 0.95 }}
                                 > View on Etsy </motion.button>
-                            </div>
+                            </div> */}
 
 
                         </div>
