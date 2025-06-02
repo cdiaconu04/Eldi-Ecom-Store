@@ -2,6 +2,7 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ShoppingCart } from 'lucide-react';
+import { motion } from "motion/react"
 
 export default function Navbar({moved}) {
     const topStyle = "fixed top-0 left-0 w-full z-50 bg-opacity-100"
@@ -22,10 +23,12 @@ export default function Navbar({moved}) {
     return (
         <nav className={finalStyle}>
             <div className="flex items-center justify-between mx-auto px-4 py-2">
-                <a className="flex items-center space-x-3 rtl:space-x-reverse" href="/">
+                <motion.a className="flex items-center space-x-3 rtl:space-x-reverse" href="/"
+                    whileHover={{ scale: 1.05 }}
+                >
                     {/* <p className="text-white font-bold font-serif text-5xl p-7"> eldi </p> */}
                     <img src="/eldilogo.png" width={110} height={110} className="p-3"/>
-                </a>
+                </motion.a>
 
                 <div className="flex flex-row justify-center items-center gap-6">
                     <ul className="font-medium flex flex-row space-x-2 rtl:space-x-reverse">

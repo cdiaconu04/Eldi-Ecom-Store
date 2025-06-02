@@ -4,6 +4,7 @@ import { useParams } from "next/navigation";
 import Navbar from '../../../components/navbar';
 import { motion } from "motion/react"
 import { useState } from 'react';
+import { useCart } from "../../../context/cart";
 
 export default function ProductPage() {
     const params = useParams();
@@ -17,6 +18,26 @@ export default function ProductPage() {
 
     //   TO EDIT LATER:
     if (!product) return <div>Product not found</div>; 
+
+    function handleSelectChange(id, value) {
+        setSelectedValues(prevValues => {
+            const newValues = [...prevValues];
+            newValues[id] = value;
+            return newValues;
+        });
+    }
+
+    const handleAddToCart = () => {
+        const item = {
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            personalizations: selectedValues,
+            pic: product.pics[0].pic,
+        }
+
+        addToCart(item);
+    }
     
     return (
         <div>
@@ -29,11 +50,12 @@ export default function ProductPage() {
                         {/* Picture carrousel */}
                         <div className="flex flex-row gap-5 justify-normal">
 
-                            <div className="flex flex-col gap-2 justify-start">
+                            <div className="flex flex-col gap-2 justify-start pl-1">
                                 {product.pics.map((pic) => (
-                                    <button key={pic.id} onClick={() => {setCurPic(pic.pic); setCurPicId(pic.id)}}>
+                                    <motion.button key={pic.id} onClick={() => {setCurPic(pic.pic); setCurPicId(pic.id)}}
+                                        whileHover={{ scale: 1.05 }}>
                                         <img src={pic.pic} width={130} className={`rounded-md ${curPicId === pic.id ? "" : "opacity-60 hover:opacity-80"}`}/>
-                                    </button>
+                                    </motion.button>
                                     
                                 ))}
                             
@@ -54,18 +76,20 @@ export default function ProductPage() {
                                 <p className="text-lg font-serif text-gray-800"> {product.description} </p>
                             </div>
                             
-                            <div className="flex flex-col gap-8 bg-neutral-100 p-5 rounded-lg shadow-lg relative w-full">
+                            <div className={`flex flex-col ${product.personalizable === true ? "gap-8" : ""} 
+                                bg-neutral-100 p-5 rounded-lg shadow-lg relative w-full`}>
+
                                 {
                                     product.personalizable === true ? 
-                                        <div>
+                                        <div className="flex flex-col gap-3">
 
                                             {product.personalizationTypes.map((persType) => (
                                                 <div key={persType.id} className="flex flex-col gap-1">
-                                                    <label className="text-lg font-serif text-gray-800 font-bold">{persType.name}</label>
+                                                    <label className="text-lg font-serif text-gray-950 font-bold">{persType.name}</label>
 
                                                     <select
                                                         value={selectedValues[persType.id]}
-                                                        // onChange={setSelectedValues => }
+                                                        onChange={(e) => handleSelectChange(persType.id, e.target.value)}
                                                         className="text-lg font-serif text-gray-800 border-gray-400 border-1 rounded-lg p-1" 
                                                     >
                                                         <option value="" className="text-lg font-serif text-gray-800"> Select an option </option>
@@ -89,15 +113,16 @@ export default function ProductPage() {
                                     : <div></div>
                                 }
                                 <div className="flex flex-col gap-3 justify-center">
-                                    <motion.button className="bg-neutral-800 rounded-full text-white text-lg font-serif px-20 py-3 hover:bg-neutral-950"
+                                    <motion.button className="bg-neutral-800 rounded-full text-white text-lg font-serif px-20 py-3 hover:bg-neutral-950 cursor-pointer"
                                         whileHover={{ scale: 1.03 }}
                                         whileTap={{ scale: 0.95 }}
                                     > Buy </motion.button>
-                                    <motion.button className="bg-neutral-800 rounded-full text-white text-lg font-serif px-20 py-3 hover:bg-neutral-950"
+                                    <motion.button className="bg-neutral-800 rounded-full text-white text-lg font-serif px-20 py-3 hover:bg-neutral-950 cursor-pointer"
                                         whileHover={{ scale: 1.03 }}
                                         whileTap={{ scale: 0.95 }}
+                                        onClick={handleAddToCart}
                                     > Add to Cart </motion.button>
-                                    <motion.button className="bg-gray-800 rounded-full text-white text-lg font-serif px-20 py-3 hover:bg-gray-950"
+                                    <motion.button className="bg-gray-800 rounded-full text-white text-lg font-serif px-20 py-3 hover:bg-gray-950 cursor-pointer"
                                         whileHover={{ scale: 1.03 }}
                                         whileTap={{ scale: 0.95 }}
                                     > View on Etsy </motion.button>

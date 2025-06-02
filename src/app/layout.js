@@ -3,6 +3,8 @@ import "./globals.css";
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
 import { headers } from 'next/headers'
+import { CartProvider } from "../context/cart";
+import { Car } from "lucide-react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,18 +26,19 @@ export default function RootLayout({ children }) {
   // const pathname = headers().get('x-next-url')
   
 
-  const headerList = headers();
-  const pathname = headerList.get("x-current-path");
+  // const headerList = headers();
+  // const pathname = headerList.get("x-current-path");
 
-  const isHomePage = pathname == '/'
+  // const isHomePage = pathname == '/'
 
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/* {isHomePage ? {children} : <div> <Navbar moved={true}/> {children} </div>} */}
-        {children}
+        <CartProvider>
+          {children}
+        </CartProvider>
         
         <Footer />
       </body>

@@ -29,21 +29,21 @@ export default function Products() {
 
                             <div className="flex flex-col gap-2">
                                 <a href="https://www.etsy.com/ca/shop/ElDiLeatherGoods" className="flex flex-row items-center justify-center">
-                                    <motion.button className="flex flex-row items-center justify-center px-5 py-2 bg-stone-800 rounded-full hover:bg-stone-950"
+                                    <motion.button className="flex flex-row items-center justify-center px-5 py-2 bg-stone-800 rounded-full hover:bg-stone-950 cursor-pointer"
                                         whileHover={{ x: 10, scale: 1.02 }}
                                         whileTap={{ scale: 0.97 }}
                                     > 
-                                        <p className="font-serif font-bold text-white hover:underline"> Shop on Etsy </p> 
+                                        <p className="font-serif font-bold text-white"> Shop on Etsy </p> 
                                         <ChevronRight className="text-white"/>
                                     </motion.button>
                                 </a>
 
                                 <a href="https://www.etsy.com/ca/shop/ElDiLeatherGoods?ref=shop_profile&listing_id=1125162739#reviews" className="flex flex-row items-center justify-center">
-                                    <motion.button className="flex flex-row items-center justify-center px-5 py-2 bg-stone-800 rounded-full hover:bg-stone-950"
+                                    <motion.button className="flex flex-row items-center justify-center px-5 py-2 bg-stone-800 rounded-full hover:bg-stone-950 cursor-pointer"
                                         whileHover={{ x: 10, scale: 1.02 }}
                                         whileTap={{ scale: 0.97 }}
                                     > 
-                                        <p className="font-serif font-bold text-white hover:underline"> See Reviews </p> 
+                                        <p className="font-serif font-bold text-white"> See Reviews </p> 
                                         <ChevronRight className="text-white"/>
                                     </motion.button>
                                 </a>

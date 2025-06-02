@@ -76,8 +76,8 @@ export default function Home() {
             
             <h2 className="text-white text-3xl font-bold z-10 font-serif py-3"> Elegant, Timeless, Leather Goods. </h2>
             
-            <a href="/products">
-              <motion.button className="w-fit bg-stone-800 font-serif font-bold px-5 py-2 hover:bg-stone-950 rounded-full"
+            <a href="/products" className="w-fit">
+              <motion.button className="w-fit bg-stone-800 font-serif font-bold px-5 py-2 hover:bg-stone-950 rounded-full cursor-pointer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
               > View Products </motion.button>
@@ -150,7 +150,7 @@ export default function Home() {
 
           
           <a href="/products">
-            <motion.button className="w-fit bg-stone-800 font-serif font-bold px-5 py-2 hover:bg-stone-950 rounded-full"
+            <motion.button className="w-fit bg-stone-800 font-serif font-bold px-5 py-2 hover:bg-stone-950 rounded-full cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
             > View all </motion.button>

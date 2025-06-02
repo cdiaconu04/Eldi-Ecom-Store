@@ -19,6 +19,8 @@ export const products = [
         description: "Handmade, full grain, Buttero vegetable tanned leather bifold wallet, full size wallet, men's cards wallet, personalized leather wallet.",
         featured: true,
         personalizable: false,
+        personalizationTypes: [],
+        personalizationOptions: [],
     },
 
     {
@@ -32,19 +34,20 @@ export const products = [
         price: "$110.00",
         description: "Personalized, handmade, full grain, vegetable tanned leather bifold wallet, minimalist slim cards wallet, men's cards wallet, custom wallet.",
         featured: false,
-        personalizable: false,
+        personalizable: true,
         personalizationTypes: [
             {id: 0, name: "Primary colour"},
             {id: 1, name: "Secondary colour"},
         ],
         personalizationOptions: [
             [
-                "Black", "Brown", "Cognac",
+                {id: 0, name:"Black"}, {id: 1, name: "Brown"}, {id: 2, name: "Cognac"},
             ],
             [
-                "Red", "Orange", "Green", "Navy Blue", "Brown", "Coffee", "Electric Blue", "Natural", "Grey", "Pearl Grey",
+                {id: 0, name: "Red"}, {id: 1, name: "Orange"}, {id: 2, name: "Green"}, {id: 3, name: "Navy Blue"}, 
+                {id: 4, name: "Brown"}, {id: 5, name: "Coffee"}, {id: 6, name: "Electric Blue"}, {id: 7, name: "Natural"}, 
+                {id: 8, name: "Grey"}, {id: 9, name: "Pearl Grey"},
             ],
-
         ],
     },
 
@@ -60,6 +63,8 @@ export const products = [
         description: "Handmade vegetable tanned leather watch strap, Vachetta leather watch strap, men's, women's watch strap, Italian leather watch strap.",
         featured: false,
         personalizable: false,
+        personalizationTypes: [],
+        personalizationOptions: [],
     },
 
     {
@@ -74,6 +79,8 @@ export const products = [
         description: "Handmade wallet, vegetable tanned leather cards wallet, slim wallet, minimalist cards wallet, men's cards wallet, front pocket wallet.",
         featured: true,
         personalizable: false,
+        personalizationTypes: [],
+        personalizationOptions: [],
     },
 
     {
@@ -96,6 +103,8 @@ export const products = [
         description: "Handmade watch strap, slim and supple vegetable tanned leather watch strap, Badalassi Carlo tobacco leather watch strap, brown watch strap.",
         featured: false,
         personalizable: false,
+        personalizationTypes: [],
+        personalizationOptions: [],
     },
 
     {
@@ -121,7 +130,6 @@ export const products = [
             [
                 {id: 0, name: "Black"}, {id: 1, name: "Red"},
             ],
-
         ],
     },
 
