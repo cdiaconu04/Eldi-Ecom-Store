@@ -3,6 +3,7 @@ import Navbar from '../../components/navbar';
 import { useCart } from "../../context/cart";
 import { motion } from "motion/react"
 import { ChevronRight } from 'lucide-react';
+import Link from "next/link";
 
 export default function CartPage() {
     const { addToCart, removeFromCart, items: cartItems } = useCart();

@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function Footer() {
     return (
         <div className="w-full bg-zinc-900">
@@ -7,15 +8,15 @@ export default function Footer() {
                 <div className="flex flex-row gap-30">
                     <div className="flex flex-col gap-1">
                         <p className="text-white text-lg font-bold font-serif"> Main </p>
-                        <a className="text-white text-md font-serif hover:underline" href="/"> Landing </a>
+                        <Link className="text-white text-md font-serif hover:underline" href="/"> Landing </Link>
                         <p className="text-white text-md font-serif hover:underline"> About </p>
                         <p className="text-white text-md font-serif hover:underline"> Products </p>
                     </div>
 
                     <div className="flex flex-col gap-1">
                         <p className="text-white text-lg font-bold font-serif"> Support </p>
-                        <a className="text-white text-md font-serif hover:underline" href="/faq"> FAQs </a>
-                        <a className="text-white text-md font-serif hover:underline" href="/terms-conditions"> Terms and Conditions </a>
+                        <Link className="text-white text-md font-serif hover:underline" href="/faq"> FAQs </Link>
+                        <Link className="text-white text-md font-serif hover:underline" href="/terms-conditions"> Terms and Conditions </Link>
                         <p className="text-white text-md font-serif hover:underline"> Contact us </p>
                     </div>
                 </div>

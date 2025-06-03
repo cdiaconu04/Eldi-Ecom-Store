@@ -5,6 +5,7 @@ import Navbar from '../../../components/navbar';
 import { motion } from "motion/react"
 import { useState } from 'react';
 import { useCart } from "../../../context/cart";
+import Link from "next/link";
 
 export default function ProductPage() {
     const params = useParams();

@@ -5,6 +5,7 @@ import Footer from '../components/footer'
 import { headers } from 'next/headers'
 import { CartProvider } from "../context/cart";
 import { Car } from "lucide-react";
+import { Providers } from "./providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

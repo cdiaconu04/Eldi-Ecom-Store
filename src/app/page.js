@@ -7,6 +7,7 @@ import { motion } from "motion/react"
 import { products } from '../data/products.js';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import Link from "next/link";
 
 export default function Home() {
   const [windowWidth, setWindowWidth] = useState(0);
@@ -78,12 +79,12 @@ export default function Home() {
             
             <h2 className="text-white text-3xl font-bold z-10 font-serif py-3"> Elegant, Timeless, Leather Goods. </h2>
             
-            <a href="/products" className="w-fit">
+            <Link href="/products" className="w-fit">
               <motion.button className="w-fit bg-stone-800 font-serif font-bold px-5 py-2 hover:bg-stone-950 rounded-full cursor-pointer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
               > View Products </motion.button>
-            </a>
+            </Link>
             
 
           </div>
@@ -135,7 +136,7 @@ export default function Home() {
             
 
             {featuredProducts.map(product => (
-              <a key={product.id} href={`/products/${product.slug}`}>
+              <Link key={product.id} href={`/products/${product.slug}`}>
 
               
               <motion.div className="flex flex-col items-center justify-center gap-5 hover:bg-white hover:rounded-xl p-5 hover:shadow-xl transition-all duration-200"
@@ -149,18 +150,18 @@ export default function Home() {
                 </div>
 
               </motion.div>
-              </a>
+              </Link>
             ))}
 
           </div>
 
           
-          <a href="/products">
+          <Link href="/products">
             <motion.button className="w-fit bg-stone-800 font-serif font-bold px-5 py-2 hover:bg-stone-950 rounded-full cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
             > View all </motion.button>
-          </a>
+          </Link>
           
 
         </div>
