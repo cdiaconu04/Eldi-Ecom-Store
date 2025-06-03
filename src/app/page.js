@@ -28,7 +28,7 @@ export default function Home() {
         }
       },
         
-      { threshold: 0.12 }
+      { threshold: 0.11 }
     );
             
     if (popularRef.current) {
