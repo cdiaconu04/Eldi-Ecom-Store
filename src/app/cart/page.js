@@ -4,9 +4,14 @@ import { useCart } from "../../context/cart";
 import { motion } from "motion/react"
 import { ChevronRight } from 'lucide-react';
 import Link from "next/link";
+import { Trash2 } from 'lucide-react';
+import { useState } from 'react';
 
 export default function CartPage() {
     const { addToCart, removeFromCart, items: cartItems } = useCart();
+
+    
+    
 
 
     return (
@@ -18,7 +23,7 @@ export default function CartPage() {
                 <div className="max-w-screen-xl mx-auto min-h-screen py-30 flex flex-col gap-10 items-center relative overflow-hidden">
                     <h2 className="text-4xl font-bold font-serif text-black"> Your Cart </h2>
 
-                    <div className="flex flex-row gap-5 items-center">
+                    <div className="flex flex-row gap-30 items-center">
 
                         <div className="flex flex-col gap-3 bg-neutral-100 p-5 rounded-lg shadow-lg relative">
                             {cartItems.length === 0 ? (
@@ -38,8 +43,37 @@ export default function CartPage() {
 
                                 </div>
                             ) : (
-                                <div className="flex flex-col gap-3">
+                                <div className="flex flex-col">
+                                    {cartItems.map((item) => (
+
+                                        <div key={item.id} className="py-1">
+                                            <div className="flex flex-row gap-5 w-130 hover:bg-white rounded-lg p-3">
+                                                <img src={item.pic} width={70} height={70} className="rounded-md"/>
+
+                                                <div className="flex flex-row justify-between items-center w-full">
+                                                    <div className="flex flex-col gap-1">
+                                                        <p className="text-lg font-serif text-gray-950 font-bold">{item.name}</p>
+                                                        <p className="text-lg font-serif text-gray-950">CA{item.price}</p>
+                                                    </div>
+
+                                                    <button className="group p-2 hover:bg-gray-950 rounded-full transition duration-100 ease-in-out">
+                                                        <Trash2 className="text-gray-950 group-hover:text-white"/>
+                                                    </button>
+                                                    
+
+                                                </div>
+                                                
+
+                                                
+
+                                            </div>
+                                            
+                                            
+                                        </div>
+                                        
                                     
+
+                                    ))}
 
                                 </div>
                             )
@@ -65,6 +99,11 @@ export default function CartPage() {
                                 <p className="text-lg font-serif text-gray-800 font-bold"> Total </p>
                                 <p className="text-lg font-serif text-gray-800 font-bold"> CA$0.00 </p>
                             </div>
+
+                            <motion.button className="bg-neutral-800 hover:bg-neutral-950 text-white rounded-full font-serif font-bold py-3"
+                                whileHover={{ scale: 1.03 }}
+                                whileTap={{ scale: 0.95 }}
+                            > Checkout </motion.button>
                         </div>
 
                     </div>
