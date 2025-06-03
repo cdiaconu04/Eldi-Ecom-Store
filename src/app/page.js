@@ -139,7 +139,7 @@ export default function Home() {
               <Link key={product.id} href={`/products/${product.slug}`}>
 
               
-              <motion.div className="flex flex-col items-center justify-center gap-5 hover:bg-white hover:rounded-xl p-5 hover:shadow-xl transition-all duration-200"
+              <motion.div className="flex flex-col items-center justify-center gap-5 hover:bg-white hover:rounded-xl p-5 hover:shadow-xl"
                 whileHover={{ scale: 1.02 }}
               >
                 <img src={product.pics[0].pic} className="shadow-xl rounded-md" width={320} height={320}/>

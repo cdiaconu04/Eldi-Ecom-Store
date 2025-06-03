@@ -47,13 +47,39 @@ export default function CartPage() {
                                     {cartItems.map((item) => (
 
                                         <div key={item.id} className="py-1">
-                                            <div className="flex flex-row gap-5 w-130 hover:bg-white rounded-lg p-3">
-                                                <img src={item.pic} width={70} height={70} className="rounded-md"/>
+                                            <div className="flex flex-row gap-5 w-130 hover:bg-white rounded-lg p-3 justify-center items-center">
+                                                
+                                                <img src={item.pic} width={80} height={80} className="rounded-md w-[80px] h-[80px]"/>
 
                                                 <div className="flex flex-row justify-between items-center w-full">
                                                     <div className="flex flex-col gap-1">
                                                         <p className="text-lg font-serif text-gray-950 font-bold">{item.name}</p>
                                                         <p className="text-lg font-serif text-gray-950">CA{item.price}</p>
+                                                        
+                                                        {/* {item.personalizable ? 
+                                                            (item.personalizations.map((pers) => (
+                                                                <div key={item.id} className="flex flex-col gap-1">
+                                                                    <p className="text-lg font-serif text-gray-950"> {pers} {pers.index === item.personalizations.length ? "" : ", "} </p>
+                                                                </div>
+                                                            )))
+                                                            :
+                                                            <div></div>
+                                                        } */}
+
+                                                        {item.personalizable ? (
+                                                            <div className="flex flex-col gap-1">
+                                                                <p className="text-lg font-serif text-gray-950">
+                                                                    {item.personalizations.map((pers, index) => (
+
+                                                                        <span key={index}>
+                                                                            {pers}{index < item.personalizations.length - 1 ? ", " : ""}
+                                                                        </span>
+                                                                        
+                                                                    ))}
+                                                                </p>
+                                                            </div>
+                                                        ) : null}
+                                                        
                                                     </div>
 
                                                     <motion.button className="group p-2 hover:bg-gray-950 rounded-full transition"

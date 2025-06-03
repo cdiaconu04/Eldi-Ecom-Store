@@ -16,7 +16,7 @@ export default function ProductPage() {
     const [curPic, setCurPic] = useState(product.pics[0].pic);
     const [curPicId, setCurPicId] = useState(product.pics[0].id);
 
-    const numDropdowns = product.personalizable ? 0 : product.personalizationTypes.length;
+    const numDropdowns = product.personalizable ? product.personalizationTypes.length : 0;
     const [selectedValues, setSelectedValues] = useState(Array(numDropdowns).fill(""));
 
     const { addToCart, removeFromCart, items: cartItems } = useCart();
@@ -33,13 +33,13 @@ export default function ProductPage() {
     //   TO EDIT LATER:
     if (!product) return <div>Product not found</div>; 
 
-    function handleSelectChange(id, value) {
-        setSelectedValues(prevValues => {
-            const newValues = [...prevValues];
-            newValues[id] = value;
-            return newValues;
-        });
-    }
+    function handleSelectChange(index, value) {
+    setSelectedValues(prevValues => {
+        const newValues = [...prevValues];
+        newValues[index] = value;
+        return newValues;
+    });
+}
 
     const handleAddToCart = () => {
         const item = {
@@ -47,11 +47,14 @@ export default function ProductPage() {
             name: product.name,
             price: product.price,
             personalizations: selectedValues,
+            personalizable: product.personalizable,
             pic: product.pics[0].pic,
         }
 
         if (cartItems.some(cartItem => cartItem.id === item.id)) {
-            toast('Item already in cart.');
+            toast.error('Item already in cart.');
+        } else if (selectedValues.some(value => value === "")) {
+            toast.error('Please select all personalization options before adding to cart.');
         } else {
             toast('Item added to cart.');
             addToCart(item);
@@ -107,13 +110,13 @@ export default function ProductPage() {
                                     product.personalizable === true ? 
                                         <div className="flex flex-col gap-3">
 
-                                            {product.personalizationTypes.map((persType) => (
+                                            {product.personalizationTypes.map((persType, index) => (
                                                 <div key={persType.id} className="flex flex-col gap-1">
                                                     <label className="text-lg font-serif text-gray-950 font-bold">{persType.name}</label>
 
                                                     <select
-                                                        value={selectedValues[persType.id]}
-                                                        onChange={(e) => handleSelectChange(persType.id, e.target.value)}
+                                                        value={selectedValues[index]}
+                                                        onChange={(e) => handleSelectChange(index, e.target.value)}
                                                         className="text-lg font-serif text-gray-800 border-gray-400 border-1 rounded-lg p-1" 
                                                     >
                                                         <option value="" className="text-lg font-serif text-gray-800"> Select an option </option>
@@ -147,7 +150,6 @@ export default function ProductPage() {
                                         onClick={handleAddToCart}
                                     > Add to Cart </motion.button>
 
-                                    {/* <Toaster /> */}
 
                                     <motion.button className="bg-gray-800 rounded-full text-white text-lg font-serif px-20 py-3 hover:bg-gray-950 cursor-pointer font-bold"
                                         whileHover={{ scale: 1.03 }}
@@ -156,30 +158,6 @@ export default function ProductPage() {
                                 </div>
 
                             </div>
-                            
-                            
-
-                            
-                            
-
-                            
-
-                            {/* <div className="flex flex-col gap-3 w-fit">
-                                <motion.button className="bg-neutral-800 rounded-full text-white text-lg font-serif px-20 py-3 hover:bg-neutral-950"
-                                    whileHover={{ scale: 1.03 }}
-                                    whileTap={{ scale: 0.95 }}
-                                > Buy </motion.button>
-                                <motion.button className="bg-neutral-800 rounded-full text-white text-lg font-serif px-20 py-3 hover:bg-neutral-950"
-                                    whileHover={{ scale: 1.03 }}
-                                    whileTap={{ scale: 0.95 }}
-                                > Add to Cart </motion.button>
-                                <motion.button className="bg-gray-800 rounded-full text-white text-lg font-serif px-20 py-3 hover:bg-gray-950"
-                                    whileHover={{ scale: 1.03 }}
-                                    whileTap={{ scale: 0.95 }}
-                                > View on Etsy </motion.button>
-                            </div> */}
-
-
                         </div>
                     </div>
                 </div>
