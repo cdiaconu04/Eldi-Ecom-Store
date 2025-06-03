@@ -56,9 +56,13 @@ export default function CartPage() {
                                                         <p className="text-lg font-serif text-gray-950">CA{item.price}</p>
                                                     </div>
 
-                                                    <button className="group p-2 hover:bg-gray-950 rounded-full transition duration-100 ease-in-out">
+                                                    <motion.button className="group p-2 hover:bg-gray-950 rounded-full transition"
+                                                        whileHover={{ scale: 1.03 }}
+                                                        whileTap={{ scale: 0.95 }}
+                                                        onClick={ () => removeFromCart(item.id) }
+                                                    >
                                                         <Trash2 className="text-gray-950 group-hover:text-white"/>
-                                                    </button>
+                                                    </motion.button>
                                                     
 
                                                 </div>

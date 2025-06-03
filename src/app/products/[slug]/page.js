@@ -6,6 +6,8 @@ import { motion } from "motion/react"
 import { useState } from 'react';
 import { useCart } from "../../../context/cart";
 import Link from "next/link";
+// import { ToastContainer, ToastContentProps, toast } from 'react-toastify';
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function ProductPage() {
     const params = useParams();
@@ -17,7 +19,16 @@ export default function ProductPage() {
     const numDropdowns = product.personalizable ? 0 : product.personalizationTypes.length;
     const [selectedValues, setSelectedValues] = useState(Array(numDropdowns).fill(""));
 
-    const { addToCart, removeFromCart, cartItems } = useCart();
+    const { addToCart, removeFromCart, items: cartItems } = useCart();
+
+    const notifySuccess = () => {
+
+    }
+    const notifyError = () => {
+        
+    }
+
+
 
     //   TO EDIT LATER:
     if (!product) return <div>Product not found</div>; 
@@ -39,12 +50,22 @@ export default function ProductPage() {
             pic: product.pics[0].pic,
         }
 
-        addToCart(item);
+        if (cartItems.some(cartItem => cartItem.id === item.id)) {
+            toast('Item already in cart.');
+        } else {
+            toast('Item added to cart.');
+            addToCart(item);
+        }
+
+        
     }
     
     return (
         <div>
             <Navbar moved={true} />
+            <Toaster
+                gutter={6000000}
+            />
 
             <div className="w-full bg-stone-200">
                 <div className="max-w-screen-xl mx-auto min-h-screen py-40 flex flex-col gap-10 items-center relative overflow-hidden">
@@ -125,6 +146,9 @@ export default function ProductPage() {
                                         whileTap={{ scale: 0.95 }}
                                         onClick={handleAddToCart}
                                     > Add to Cart </motion.button>
+
+                                    {/* <Toaster /> */}
+
                                     <motion.button className="bg-gray-800 rounded-full text-white text-lg font-serif px-20 py-3 hover:bg-gray-950 cursor-pointer font-bold"
                                         whileHover={{ scale: 1.03 }}
                                         whileTap={{ scale: 0.95 }}
