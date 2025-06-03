@@ -133,7 +133,10 @@ export default function Home() {
             
 
             {featuredProducts.map(product => (
-              <motion.div key={product.id} className="flex flex-col items-center justify-center gap-5 hover:bg-white hover:rounded-xl p-5 hover:shadow-xl transition-all duration-200"
+              <a key={product.id} href={`/products/${product.slug}`}>
+
+              
+              <motion.div className="flex flex-col items-center justify-center gap-5 hover:bg-white hover:rounded-xl p-5 hover:shadow-xl transition-all duration-200"
                 whileHover={{ scale: 1.02 }}
               >
                 <img src={product.pics[0].pic} className="shadow-xl rounded-md" width={320} height={320}/>
@@ -144,6 +147,7 @@ export default function Home() {
                 </div>
 
               </motion.div>
+              </a>
             ))}
 
           </div>
