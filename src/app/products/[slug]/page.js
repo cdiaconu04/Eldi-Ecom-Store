@@ -16,6 +16,8 @@ export default function ProductPage() {
     const numDropdowns = product.personalizable ? 0 : product.personalizationTypes.length;
     const [selectedValues, setSelectedValues] = useState(Array(numDropdowns).fill(""));
 
+    const { addToCart, removeFromCart, cartItems } = useCart();
+
     //   TO EDIT LATER:
     if (!product) return <div>Product not found</div>; 
 
@@ -113,16 +115,16 @@ export default function ProductPage() {
                                     : <div></div>
                                 }
                                 <div className="flex flex-col gap-3 justify-center">
-                                    <motion.button className="bg-neutral-800 rounded-full text-white text-lg font-serif px-20 py-3 hover:bg-neutral-950 cursor-pointer"
+                                    <motion.button className="bg-neutral-800 rounded-full text-white text-lg font-serif px-20 py-3 hover:bg-neutral-950 cursor-pointer font-bold"
                                         whileHover={{ scale: 1.03 }}
                                         whileTap={{ scale: 0.95 }}
                                     > Buy </motion.button>
-                                    <motion.button className="bg-neutral-800 rounded-full text-white text-lg font-serif px-20 py-3 hover:bg-neutral-950 cursor-pointer"
+                                    <motion.button className="bg-neutral-800 rounded-full text-white text-lg font-serif px-20 py-3 hover:bg-neutral-950 cursor-pointer font-bold"
                                         whileHover={{ scale: 1.03 }}
                                         whileTap={{ scale: 0.95 }}
                                         onClick={handleAddToCart}
                                     > Add to Cart </motion.button>
-                                    <motion.button className="bg-gray-800 rounded-full text-white text-lg font-serif px-20 py-3 hover:bg-gray-950 cursor-pointer"
+                                    <motion.button className="bg-gray-800 rounded-full text-white text-lg font-serif px-20 py-3 hover:bg-gray-950 cursor-pointer font-bold"
                                         whileHover={{ scale: 1.03 }}
                                         whileTap={{ scale: 0.95 }}
                                     > View on Etsy </motion.button>

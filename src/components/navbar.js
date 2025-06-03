@@ -40,7 +40,9 @@ export default function Navbar({moved}) {
                         </li>
                     </ul>
 
-                    <ShoppingCart className="text-white"/>
+                    <a href="/cart">
+                        <ShoppingCart className="text-white"/>
+                    </a>
                 </div>
             </div>
         </nav>
