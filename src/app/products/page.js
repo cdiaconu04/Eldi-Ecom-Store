@@ -79,7 +79,7 @@ export default function Products() {
                         <div className="grid grid-cols-3 gap-5">
                             {filteredProducts.map(product => (
                                 <Link key={product.id} href={`/products/${product.slug}`}>
-                                    <motion.div className="flex flex-col items-center justify-center gap-2 hover:bg-white hover:rounded-xl p-3 hover:shadow-xl transition-all duration-200"
+                                    <motion.div className="flex flex-col items-center justify-center gap-2 hover:bg-white hover:rounded-xl p-3 hover:shadow-xl"
                                         whileHover={{ scale: 1.02 }}
                                         whileTap={{ scale: 0.97 }}
                                     >

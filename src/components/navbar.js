@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { ShoppingCart } from 'lucide-react';
 import { motion } from "motion/react"
 import Link from "next/link";
+import { useCart } from "../context/cart";
 
 export default function Navbar({moved}) {
     const topStyle = "fixed top-0 left-0 w-full z-50 bg-opacity-100"
@@ -13,6 +14,8 @@ export default function Navbar({moved}) {
 
     const pathname = usePathname()
     const [hydrated, setHydrated] = useState(false);
+
+    const { addToCart, removeFromCart, items: cartItems } = useCart();
     
     let productsStyle = hydrated && pathname === "/products" ? "group block px-3 py-2 text-gray-950 bg-white font-bold rounded-full border-0 transition duration-300" :
         "group block px-5 py-2 text-white font-bold rounded-sm border-0 hover:text-white transition duration-300 hover:underline"
@@ -33,16 +36,32 @@ export default function Navbar({moved}) {
 
                 <div className="flex flex-row justify-center items-center gap-6">
                     <ul className="font-medium flex flex-row space-x-2 rtl:space-x-reverse">
-                        <li className="flex flex-col">
-                            <Link className="group block px-5 py-2 text-white font-bold rounded-sm border-0 hover:text-white transition duration-300 hover:underline" href="/products"> Products </Link>
+                        <li className="group flex flex-col hover:bg-white rounded-full">
+                            <Link className="group block px-5 py-2 text-white font-bold rounded-sm border-0 group-hover:text-gray-950 transition duration-300" href="/products"> Products </Link>
                         </li>
-                        <li className="flex flex-col">
-                            <a className="group block px-5 py-2 text-white font-bold rounded-sm border-0 hover:text-white transition duration-300 hover:underline"> Contact us </a>
+                        <li className="group flex flex-col hover:bg-white rounded-full">
+                            <a className="group block px-5 py-2 text-white font-bold rounded-sm border-0 group-hover:text-gray-950 transition duration-300"> Contact us </a>
                         </li>
                     </ul>
 
                     <Link href="/cart">
-                        <ShoppingCart className="text-white"/>
+                        <div className="relative">
+                            <motion.div className="group p-2 hover:bg-white rounded-full transition"
+                                whileHover={{ scale: 1.03 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                    
+                                <ShoppingCart className="text-white group-hover:text-gray-950"/>
+                                    
+                            </motion.div>
+
+                            {cartItems.length > 0 && (
+                                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full leading-none">
+                                    {cartItems.length}
+                                </span>
+                            )}
+
+                        </div>
                     </Link>
                 </div>
             </div>
