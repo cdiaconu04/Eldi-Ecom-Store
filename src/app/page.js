@@ -8,6 +8,7 @@ import { products } from '../data/products.js';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Link from "next/link";
+import { useRecents } from "../context/recents";
 
 export default function Home() {
   const [windowWidth, setWindowWidth] = useState(0);
@@ -18,6 +19,19 @@ export default function Home() {
 
   const [featuredFilter, setFeaturedFilter] = useState(true);
   const featuredProducts = products.filter(product => product.featured === true)
+
+  const { addRecents, recentlyViewed } = useRecents();
+
+  const handleAddToRecents = (product) => {
+        const item = {
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            slug: product.slug,
+            pic: product.pics[0].pic,
+        }
+        addRecents(item)
+    }
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -138,18 +152,19 @@ export default function Home() {
             {featuredProducts.map(product => (
               <Link key={product.id} href={`/products/${product.slug}`}>
 
-              
-              <motion.div className="flex flex-col items-center justify-center gap-5 hover:bg-white hover:rounded-xl p-5 hover:shadow-xl"
-                whileHover={{ scale: 1.02 }}
-              >
-                <img src={product.pics[0].pic} className="shadow-xl rounded-md" width={320} height={320}/>
+                <button onClick={() => handleAddToRecents(product)}>
+                  <motion.div className="flex flex-col items-center justify-center gap-5 hover:bg-white hover:rounded-xl p-5 hover:shadow-xl"
+                    whileHover={{ scale: 1.02 }}
+                  >
+                    <img src={product.pics[0].pic} className="shadow-xl rounded-md" width={320} height={320}/>
 
-                <div className="flex flex-col">
-                  <p className="text-gray-950 text-lg font-serif"> {product.name} </p>
-                  <p className="text-gray-950 text-md font-serif font-bold text-center"> {product.price} </p>
-                </div>
+                    <div className="flex flex-col">
+                      <p className="text-gray-950 text-lg font-serif"> {product.name} </p>
+                      <p className="text-gray-950 text-md font-serif font-bold text-center"> {product.price} </p>
+                    </div>
 
-              </motion.div>
+                  </motion.div>
+                </button>
               </Link>
             ))}
 
