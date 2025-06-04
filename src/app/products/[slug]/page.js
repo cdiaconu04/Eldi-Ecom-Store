@@ -65,13 +65,13 @@ export default function ProductPage() {
         } 
     }
 
-    const handleAddToRecents = () => {
+    const handleAddToRecents = (product) => {
         const item = {
             id: product.id,
             name: product.name,
             price: product.price,
             slug: product.slug,
-            pic: product.pics[0].pic,
+            pic: product.pic,
         }
         addRecents(item)
     }
@@ -202,14 +202,16 @@ export default function ProductPage() {
 
                                 {recentlyViewed.map((item, index) => (
                                     <Link key={index} href={`/products/${item.slug}`}>
-                                        <motion.div className="flex flex-col justify-center items-center gap-2 hover:bg-white hover:rounded-xl p-3 hover:shadow-xl"
-                                            whileHover={{ scale: 1.02 }}
-                                            whileTap={{ scale: 0.97 }}
-                                        >
-                                            <img src={item.pic} width={250} height={250} className="shadow-xl rounded-md"/>
-                                            <p className="text-md font-serif text-gray-950">{item.name}</p>
-                                            <p className="text-gray-950 text-sm font-serif font-bold text-center"> CA{item.price} </p>
-                                        </motion.div>
+                                        <button onClick={() => handleAddToRecents(item)}>
+                                            <motion.div className="flex flex-col justify-center items-center gap-2 hover:bg-white hover:rounded-xl p-3 hover:shadow-xl"
+                                                whileHover={{ scale: 1.02 }}
+                                                whileTap={{ scale: 0.97 }}
+                                            >
+                                                <img src={item.pic} width={250} height={250} className="shadow-xl rounded-md"/>
+                                                <p className="text-md font-serif text-gray-950">{item.name}</p>
+                                                <p className="text-gray-950 text-sm font-serif font-bold text-center"> CA{item.price} </p>
+                                            </motion.div>
+                                        </button>
                                     </Link>
                                 ))}
 
