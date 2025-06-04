@@ -43,6 +43,7 @@ export default function CartPage() {
 
                                 </div>
                             ) : (
+                                // Shopping cart items
                                 <div className="flex flex-col">
                                     {cartItems.map((item) => (
 
@@ -55,16 +56,6 @@ export default function CartPage() {
                                                     <div className="flex flex-col gap-1">
                                                         <p className="text-lg font-serif text-gray-950 font-bold">{item.name}</p>
                                                         <p className="text-lg font-serif text-gray-950">CA{item.price}</p>
-                                                        
-                                                        {/* {item.personalizable ? 
-                                                            (item.personalizations.map((pers) => (
-                                                                <div key={item.id} className="flex flex-col gap-1">
-                                                                    <p className="text-lg font-serif text-gray-950"> {pers} {pers.index === item.personalizations.length ? "" : ", "} </p>
-                                                                </div>
-                                                            )))
-                                                            :
-                                                            <div></div>
-                                                        } */}
 
                                                         {item.personalizable ? (
                                                             <div className="flex flex-col gap-1">
@@ -79,7 +70,6 @@ export default function CartPage() {
                                                                 </p>
                                                             </div>
                                                         ) : null}
-                                                        
                                                     </div>
 
                                                     <motion.button className="group p-2 hover:bg-gray-950 rounded-full transition"
@@ -92,26 +82,14 @@ export default function CartPage() {
                                                     
 
                                                 </div>
-                                                
-
-                                                
-
                                             </div>
-                                            
-                                            
                                         </div>
-                                        
-                                    
-
                                     ))}
-
                                 </div>
-                            )
-
-                            }
+                            )}
                         </div>
                         
-                        
+                        {/* Totals section */}
                         <div className="flex flex-col gap-3 bg-neutral-100 p-5 rounded-lg shadow-lg relative w-100 divide-y-2 divide-solid divide-gray-800">
                             <div className="flex flex-col gap-3">
                                 <p className="text-xl font-serif text-gray-950 font-bold"> Order Summary </p>

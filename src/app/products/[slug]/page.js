@@ -159,6 +159,30 @@ export default function ProductPage() {
 
                             </div>
                         </div>
+
+
+                        
+                    </div>
+
+                    <div className="flex flex-col gap-5 bg-neutral-100 p-5 rounded-lg shadow-lg relative w-full">
+
+                        <div className="flex flex-col gap-1">
+                            <h2 className="text-xl font-bold font-serif text-gray-950"> More details </h2>
+                            <p className="text-lg font-serif text-gray-800"> {product.moreDetails.description} </p>
+                        </div>
+
+                        <div className="flex flex-col gap-1">
+                            <h2 className="text-xl font-bold font-serif text-gray-950"> What's in the package </h2>
+                            <p className="text-lg font-serif text-gray-800"> {product.moreDetails.inpackage} </p>
+                        </div>
+
+                        <div className="flex flex-col gap-1">
+                            <h2 className="text-xl font-bold font-serif text-gray-950"> Materials </h2>
+                            <p className="text-lg font-serif text-gray-800"> {product.moreDetails.materials} </p>
+                        </div>
+                        
+                    
+                    
                     </div>
                 </div>
             </div>
