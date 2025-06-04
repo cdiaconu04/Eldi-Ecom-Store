@@ -4,6 +4,8 @@ import Navbar from '../components/navbar'
 import Footer from '../components/footer'
 import { headers } from 'next/headers'
 import { CartProvider } from "../context/cart";
+import { RecentsProvider } from "../context/recents";
+
 import { Car } from "lucide-react";
 import { Providers } from "./providers";
 
@@ -24,22 +26,16 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 
-  // const pathname = headers().get('x-next-url')
-  
-
-  // const headerList = headers();
-  // const pathname = headerList.get("x-current-path");
-
-  // const isHomePage = pathname == '/'
-
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <CartProvider>
-          {children}
-        </CartProvider>
+      > 
+        <RecentsProvider>
+          <CartProvider>
+            {children}
+          </CartProvider>
+        </RecentsProvider>
         
         <Footer />
       </body>

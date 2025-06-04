@@ -7,12 +7,27 @@ import { products } from '../../data/products.js';
 import { ShoppingCart } from 'lucide-react';
 import Link from "next/link";
 
+import { useRecents } from "../../context/recents";
+
 export default function Products() {
     const [typeFilter, setTypeFilter] = useState("All");
 
     const types = ["All", "Bracelets", "Wallets", "Watch straps"];
 
     const filteredProducts = typeFilter === "All" ? products : products.filter(product => product.type === typeFilter);
+
+    const { addRecents, recentlyViewed } = useRecents();
+
+    const handleAddToRecents = (product) => {
+        const item = {
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            slug: product.slug,
+            pic: product.pics[0].pic,
+        }
+        addRecents(item)
+    }
 
     return (
         <div>
@@ -94,6 +109,10 @@ export default function Products() {
                         <div className="grid grid-cols-3 gap-5">
                             {filteredProducts.map(product => (
                                 <Link key={product.id} href={`/products/${product.slug}`}>
+                                    <button
+                                        onClick={() => handleAddToRecents(product)}
+                                        className="hover:cursor-pointer"
+                                    >
                                     <motion.div className="flex flex-col items-center justify-center gap-2 hover:bg-white hover:rounded-xl p-3 hover:shadow-xl"
                                         whileHover={{ scale: 1.02 }}
                                         whileTap={{ scale: 0.97 }}
@@ -108,6 +127,7 @@ export default function Products() {
                                             </div>
                                         </div>
                                     </motion.div>
+                                    </button>
                                 </Link>
                             ))}
                             

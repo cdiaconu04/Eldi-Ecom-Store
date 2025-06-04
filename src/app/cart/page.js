@@ -10,10 +10,6 @@ import { useState } from 'react';
 export default function CartPage() {
     const { addToCart, removeFromCart, items: cartItems } = useCart();
 
-    
-    
-
-
     return (
         <div>
             <Navbar moved={true} />

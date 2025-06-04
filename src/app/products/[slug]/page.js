@@ -5,6 +5,9 @@ import Navbar from '../../../components/navbar';
 import { motion } from "motion/react"
 import { useState } from 'react';
 import { useCart } from "../../../context/cart";
+import { useRecents } from "../../../context/recents";
+
+
 import Link from "next/link";
 // import { ToastContainer, ToastContentProps, toast } from 'react-toastify';
 import toast, { Toaster } from 'react-hot-toast';
@@ -20,6 +23,7 @@ export default function ProductPage() {
     const [selectedValues, setSelectedValues] = useState(Array(numDropdowns).fill(""));
 
     const { addToCart, removeFromCart, items: cartItems } = useCart();
+    const { addRecents, recentlyViewed } = useRecents();
 
     const notifySuccess = () => {
 
@@ -34,12 +38,12 @@ export default function ProductPage() {
     if (!product) return <div>Product not found</div>; 
 
     function handleSelectChange(index, value) {
-    setSelectedValues(prevValues => {
-        const newValues = [...prevValues];
-        newValues[index] = value;
-        return newValues;
-    });
-}
+        setSelectedValues(prevValues => {
+            const newValues = [...prevValues];
+            newValues[index] = value;
+            return newValues;
+        });
+    }
 
     const handleAddToCart = () => {
         const item = {
@@ -58,9 +62,18 @@ export default function ProductPage() {
         } else {
             toast('Item added to cart.');
             addToCart(item);
-        }
+        } 
+    }
 
-        
+    const handleAddToRecents = () => {
+        const item = {
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            slug: product.slug,
+            pic: product.pics[0].pic,
+        }
+        addRecents(item)
     }
     
     return (
@@ -83,7 +96,6 @@ export default function ProductPage() {
                                         whileHover={{ scale: 1.05 }}>
                                         <img src={pic.pic} width={130} className={`rounded-md ${curPicId === pic.id ? "" : "opacity-60 hover:opacity-80"}`}/>
                                     </motion.button>
-                                    
                                 ))}
                             
                             </div>
@@ -91,9 +103,7 @@ export default function ProductPage() {
                             <div>
                                 <img src={curPic} width={1300} height={1300} className="rounded-lg"/>
                             </div>
-                            
                         </div>
-
 
                         {/* Product details */}
                         <div className="flex flex-col gap-10 items-center">
@@ -128,8 +138,6 @@ export default function ProductPage() {
                                                                 </option>
                                                             ))
                                                         }
-
-
                                                     </select>
 
                                                 </div>
@@ -184,6 +192,35 @@ export default function ProductPage() {
                     
                     
                     </div>
+                    
+                    { recentlyViewed.length === 0 ? null : 
+                        <div className="flex flex-col gap-5 bg-neutral-100 p-5 rounded-lg shadow-lg relative items-center justify-center">
+                            <h2 className="text-2xl font-bold font-serif text-gray-950"> Recently viewed </h2>
+
+                            <div className="flex flex-row gap-5">
+                                
+
+                                {recentlyViewed.map((item, index) => (
+                                    <Link key={index} href={`/products/${item.slug}`}>
+                                        <motion.div className="flex flex-col justify-center items-center gap-2 hover:bg-white hover:rounded-xl p-3 hover:shadow-xl"
+                                            whileHover={{ scale: 1.02 }}
+                                            whileTap={{ scale: 0.97 }}
+                                        >
+                                            <img src={item.pic} width={250} height={250} className="shadow-xl rounded-md"/>
+                                            <p className="text-md font-serif text-gray-950">{item.name}</p>
+                                            <p className="text-gray-950 text-sm font-serif font-bold text-center"> CA{item.price} </p>
+                                        </motion.div>
+                                    </Link>
+                                ))}
+
+                            </div>
+                        </div>
+                    }
+                    
+
+
+                    
+
                 </div>
             </div>
         </div>
