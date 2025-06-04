@@ -23,15 +23,15 @@ export default function Home() {
   const { addRecents, recentlyViewed } = useRecents();
 
   const handleAddToRecents = (product) => {
-        const item = {
-            id: product.id,
-            name: product.name,
-            price: product.price,
-            slug: product.slug,
-            pic: product.pics[0].pic,
-        }
-        addRecents(item)
+    const item = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      slug: product.slug,
+      pic: product.pics[0].pic,
     }
+    addRecents(item)
+  }
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -114,41 +114,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-3 gap-10">
-
-            {/* <motion.div className="flex flex-col items-center justify-center gap-5 hover:bg-white hover:rounded-xl p-5 hover:shadow-xl transition-all duration-200"
-              whileHover={{ scale: 1.02 }}>
-              <img src="/products/bayfullsizewallet/pic1.png" className="shadow-xl rounded-md" width={320} height={320}/>
-
-              <div className="flex flex-col">
-                <p className="text-gray-950 text-lg font-serif"> “Bay” Full Size Wallet </p>
-                <p className="text-gray-950 text-md font-serif font-bold text-center"> CAD $100 </p>
-              </div>
-              
-            </motion.div>
-
-            <motion.div className="flex flex-col items-center justify-center gap-5 hover:bg-white hover:rounded-xl p-5 hover:shadow-xl transition-all duration-200"
-              whileHover={{ scale: 1.02 }}>
-              <img src="/products/finchcardswallet/pic1.png" className="shadow-xl rounded-md" width={320} height={320}/>
-
-              <div className="flex flex-col">
-                <p className="text-gray-950 text-lg font-serif"> “Finch” Cards Wallet </p>
-                <p className="text-gray-950 text-md font-serif font-bold text-center"> CAD $100 </p>
-              </div>
-              
-            </motion.div>
-
-            <motion.div className="flex flex-col items-center justify-center gap-5 hover:bg-white hover:rounded-xl p-5 hover:shadow-xl transition-all duration-200"
-              whileHover={{ scale: 1.02 }}>
-              <img src="/products/westqueengothbracelet/pic1.png" className="shadow-xl rounded-md" width={320} height={320}/>
-
-              <div className="flex flex-col">
-                <p className="text-gray-950 text-lg font-serif"> “West Queen” Goth Cuff Bracelet </p>
-                <p className="text-gray-950 text-md font-serif font-bold text-center"> CAD $100 </p>
-              </div>
-              
-            </motion.div> */}
             
-
             {featuredProducts.map(product => (
               <Link key={product.id} href={`/products/${product.slug}`}>
 
