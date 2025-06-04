@@ -48,7 +48,9 @@ export default function CartPage() {
                                     {cartItems.map((item) => (
 
                                         <div key={item.id} className="py-1">
-                                            <div className="flex flex-row gap-5 w-130 hover:bg-white rounded-lg p-3 justify-center items-center">
+                                            <motion.div className="flex flex-row gap-5 w-130 hover:bg-white rounded-lg p-3 justify-center items-center"
+                                                whileHover={{ scale: 1.01 }}
+                                            >
                                                 
                                                 <img src={item.pic} width={80} height={80} className="rounded-md w-[80px] h-[80px]"/>
 
@@ -82,7 +84,7 @@ export default function CartPage() {
                                                     
 
                                                 </div>
-                                            </div>
+                                            </motion.div>
                                         </div>
                                     ))}
                                 </div>

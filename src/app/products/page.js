@@ -51,13 +51,13 @@ export default function Products() {
                                 
                             </div>
 
-                            <div className="flex flex-col gap-2 justify-center bg-neutral-100 p-3 rounded-lg">
+                            <div className="flex flex-col gap-2 justify-center bg-neutral-100 p-4 rounded-lg">
 
-                                <p className="text-md text-gray-950 font-serif font-bold"> Product type </p>
+                                <p className="text-lg text-gray-950 font-serif font-bold"> Product type </p>
 
-                                <div className="flex flex-col gap-2">
+                                {/* <div className="flex flex-col gap-2">
                                     {types.map(productType => (
-                                        <label key={productType} className="flex items-center space-x-2 cursor-pointer">
+                                        <label key={productType} className="flex flex-col items-center cursor-pointer">
                                             <input
                                                 type="radio"
                                                 value={productType}
@@ -66,6 +66,21 @@ export default function Products() {
                                                 className="form-radio text-white bg-black border-white focus:ring-0"
                                             />
                                             <span className="text-md text-gray-800 font-serif"> {productType} </span>
+                                        </label>
+                                    ))}
+                                </div> */}
+
+                                <div className="flex flex-col gap-2">
+                                    {types.map(productType => (
+                                        <label key={productType} className="flex flex-col items-center cursor-pointer gap-2">
+
+                                            <motion.button className={`hover:bg-gray-950 hover:text-white hover:border-gray-950 font-serif font-bold px-5 py-2 w-full rounded-full border-2 ${typeFilter === productType ? "bg-stone-800 text-white border-stone-800" : "text-gray-700"}`}
+                                                onClick={() => setTypeFilter(productType)}
+                                                whileHover={{ scale: 1.02 }}
+                                                whileTap={{ scale: 0.97 }}
+                                            >
+                                                {productType}
+                                            </motion.button>
                                         </label>
                                     ))}
                                 </div>
