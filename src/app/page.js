@@ -73,16 +73,13 @@ export default function Home() {
 
   return (
     <div>
-      {/* <Navbar moved={isInView}/> */}
       <Navbar moved={isInView}/>
 
       {/* Intro section */}
       <div className="w-full bg-black" ref={popularRef}>
         
         {/* Background */}
-        <div className="absolute inset-0 pointer-events-none h-screen z-0">
-          <img src="/leather.png" className="w-full h-screen object-cover opacity-70" width={windowWidth} height={windowHeight}/>
-        </div>
+        <div className="absolute inset-0 pointer-events-none bg-fixed bg-cover z-0 bg-center opacity-70 bg-[url('/leather.png')]"/>
 
         {/* Foreground */}
         <div className="max-w-screen-xl mx-auto p-4 min-h-screen flex items-center justify-between relative overflow-hidden">
@@ -94,7 +91,7 @@ export default function Home() {
             <h2 className="text-white text-3xl font-bold z-10 font-serif py-3"> Elegant, Timeless, Leather Goods. </h2>
             
             <Link href="/products" className="w-fit">
-              <motion.button className="w-fit bg-stone-800 font-serif font-bold px-5 py-2 hover:bg-stone-950 rounded-full cursor-pointer"
+              <motion.button className="w-fit bg-stone-800 font-serif font-bold px-5 py-2 hover:bg-stone-950 rounded-full mouse-point"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
               > View Products </motion.button>
@@ -119,7 +116,7 @@ export default function Home() {
               <Link key={product.id} href={`/products/${product.slug}`}>
 
                 <button onClick={() => handleAddToRecents(product)}>
-                  <motion.div className="flex flex-col items-center justify-center gap-5 hover:bg-white hover:rounded-xl p-5 hover:shadow-xl"
+                  <motion.div className="flex flex-col items-center justify-center gap-5 hover:bg-white hover:rounded-xl p-5 hover:shadow-xl cursor-pointer"
                     whileHover={{ scale: 1.02 }}
                   >
                     <img src={product.pics[0].pic} className="shadow-xl rounded-md" width={320} height={320}/>

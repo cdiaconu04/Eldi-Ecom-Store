@@ -70,21 +70,6 @@ export default function Products() {
 
                                 <p className="text-lg text-gray-950 font-serif font-bold"> Product type </p>
 
-                                {/* <div className="flex flex-col gap-2">
-                                    {types.map(productType => (
-                                        <label key={productType} className="flex flex-col items-center cursor-pointer">
-                                            <input
-                                                type="radio"
-                                                value={productType}
-                                                checked={typeFilter === productType}
-                                                onChange={() => setTypeFilter(productType)}
-                                                className="form-radio text-white bg-black border-white focus:ring-0"
-                                            />
-                                            <span className="text-md text-gray-800 font-serif"> {productType} </span>
-                                        </label>
-                                    ))}
-                                </div> */}
-
                                 <div className="flex flex-col gap-2">
                                     {types.map(productType => (
                                         <label key={productType} className="flex flex-col items-center cursor-pointer gap-2">
