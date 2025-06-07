@@ -9,6 +9,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Link from "next/link";
 import { useRecents } from "../context/recents";
+import { Noto_Serif } from 'next/font/google';
 
 export default function Home() {
   const [windowWidth, setWindowWidth] = useState(0);
