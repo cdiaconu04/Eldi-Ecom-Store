@@ -98,6 +98,7 @@ export const products = [
             inpackage: "The shipping packaging will have the wallet gift-packaged in a kraft envelope, tied with a natural fiber string (pictured).",
             materials: "The wallet is crafted from the premium “Spade Chestnut” vegetable tanned leather that is produced by the awards winning European “Sepici” tannery. The thread we use for saddle stitching is the Japanese bonded polyester thread Vinymo MBT. The leathers we use are full grain leathers, characterized by a beautiful aniline finish surface, a very natural look and a deep and rich color which will only grow better with time. The edges are beveled, sanded, sealed, and carefully burnished by hand to a perfectly warm shine that adds character and durability. We apply a thin layer of mink oil on the wallet before shipping. With your further minimum maintenance and care, this wallet will stand for a long time to come as a statement of your personal style and love about our environment.",
         },
+        priceID: "price_1RYAU7PNpeXCusNEKzJKugZ7",
     },
 
     {
@@ -158,6 +159,7 @@ export const products = [
             inpackage: "You will receive the bracelet gift-packaged in a black satin satchel (pictured).",
             materials: "The bracelet is crafted from the premium “Buttero” vegetable tanned leather produced by the renown “Conceria Walpier” tannery in Tuscany, Italy. The “Buttero” leather is characterized by a beautiful aniline finish surface, a very natural look and a deep and rich color which will only grow better with time. The bracelet exhibits black Italian vegetable tanned calf leather lining, 100% low lead brass buckle, and saddle stitching with waxed linen thread. We apply a thin layer of mink oil on the bracelet before shipping. With your further minimum maintenance and care, the bracelet will stand for a long time to come as a statement of your personal style and love about our environment.",
         },
+        priceID: "price_1RYAg9PNpeXCusNEpFB1d14B",
     },
 
 ]
