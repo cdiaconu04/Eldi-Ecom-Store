@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@material-tailwind/react": "^2.1.10",
+    "@stripe/stripe-js": "^7.3.1",
     "lucide": "^0.511.0",
     "lucide-react": "^0.511.0",
     "motion": "^12.15.0",
@@ -18,7 +19,8 @@
     "react-dom": "^19.0.0",
     "react-hot-toast": "^2.5.2",
     "react-multi-carousel": "^2.8.6",
-    "react-toastify": "^11.0.5"
+    "react-toastify": "^11.0.5",
+    "stripe": "^18.2.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

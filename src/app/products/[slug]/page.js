@@ -7,6 +7,9 @@ import { useState } from 'react';
 import { useCart } from "../../../context/cart";
 import { useRecents } from "../../../context/recents";
 
+import { loadStripe } from '@stripe/stripe-js';
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
+
 
 import Link from "next/link";
 // import { ToastContainer, ToastContentProps, toast } from 'react-toastify';
@@ -24,15 +27,6 @@ export default function ProductPage() {
 
     const { addToCart, removeFromCart, items: cartItems } = useCart();
     const { addRecents, recentlyViewed } = useRecents();
-
-    const notifySuccess = () => {
-
-    }
-    const notifyError = () => {
-        
-    }
-
-
 
     //   TO EDIT LATER:
     if (!product) return <div>Product not found</div>; 
@@ -75,6 +69,24 @@ export default function ProductPage() {
         }
         addRecents(item)
     }
+
+    const handleBuyNow = async () => {
+        const stripe = await stripePromise;
+
+        const res = await fetch('/api/create-checkout-session', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ priceId: product.priceID }),
+        });
+
+        const data = await res.json();
+
+        if (data.url) {
+            window.location.href = data.url;
+        } else {
+            toast.error("Checkout session failed");
+        }
+    };
     
     return (
         <div>
@@ -151,6 +163,7 @@ export default function ProductPage() {
                                     <motion.button className="bg-neutral-800 rounded-full text-white text-lg font-serif px-20 py-3 hover:bg-neutral-950 cursor-pointer font-bold"
                                         whileHover={{ scale: 1.03 }}
                                         whileTap={{ scale: 0.95 }}
+                                        onClick={handleBuyNow}
                                     > Buy </motion.button>
                                     <motion.button className="bg-neutral-800 rounded-full text-white text-lg font-serif px-20 py-3 hover:bg-neutral-950 cursor-pointer font-bold"
                                         whileHover={{ scale: 1.03 }}

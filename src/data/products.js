@@ -26,6 +26,7 @@ export const products = [
             inpackage: "The shipping packaging will have the wallet gift-packaged in a black, soft-touch finish, envelope, tied with a natural fiber string (pictured).",
             materials: "The wallet is crafted from the best Italian vegetable tanned leathers, as follows: The Black outer shell is made from the exquisite “Buttero” vegetable tanned leather, produced in Tuscany by the renown \"Conceria Walpier\" tannery. The “Cognac” interior is made from oiled “Vachetta” leather, produced with the antique \"Tuscan Method\", which is considered the best vegetable tanning process in the world. It follows a know-how present only in Italy , belonging to the ancient tradition of local tanneries. The leathers we use for this wallet are full grain leathers, characterized by a beautiful aniline finish surface, a very natural look and a deep and rich color which will only grow better with time. The wallet exhibits fine saddle stitching with a beautiful and durable waxed round linen thread, that is equally vibrant in color as well as strong and wear resistant. The edges of the wallet are beveled, sanded, sealed, and carefully burnished by hand to a perfectly warm shine that adds character and durability. We apply a thin layer of mink oil on the product, before shipping. With your further minimum maintenance and care, this wallet will stand for a long time to come as a statement of your personal style and love about our environment.",
         },
+        priceID: "price_1RY97aPNpeXCusNEtdOkhAri",
     },
 
     {
