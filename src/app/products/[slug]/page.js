@@ -71,6 +71,11 @@ export default function ProductPage() {
     }
 
     const handleBuyNow = async () => {
+        if (selectedValues.some(value => value === "")) {
+            toast.error('Please select all personalization options before buying.');
+            return;
+        }
+
         const stripe = await stripePromise;
 
         const res = await fetch('/api/create-checkout-session', {
