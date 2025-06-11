@@ -44,6 +44,7 @@ export default function ProductPage() {
             id: product.id,
             name: product.name,
             price: product.price,
+            priceNum: product.priceNum,
             personalizations: selectedValues,
             personalizable: product.personalizable,
             pic: product.pics[0].pic,

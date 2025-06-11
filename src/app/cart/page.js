@@ -5,10 +5,24 @@ import { motion } from "motion/react"
 import { ChevronRight } from 'lucide-react';
 import Link from "next/link";
 import { Trash2 } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function CartPage() {
+    function getTotalPrice(theItems) {
+        let sum = 0
+        for (const item of theItems) {
+            sum += item.priceNum
+        }
+        return sum
+    }
+
     const { addToCart, removeFromCart, items: cartItems } = useCart();
+
+    const [ totalPrice, setTotalPrice ] = useState(getTotalPrice(cartItems))
+
+    useEffect(() => {
+        setTotalPrice(getTotalPrice(cartItems))
+    }, [cartItems]);
 
     return (
         <div>
@@ -91,19 +105,34 @@ export default function CartPage() {
                         <div className="flex flex-col gap-3 bg-neutral-100 p-5 rounded-lg shadow-lg relative w-100 divide-y-2 divide-solid divide-gray-800">
                             <div className="flex flex-col gap-3">
                                 <p className="text-xl font-serif text-gray-950 font-bold"> Order Summary </p>
-                                <div className="flex flex-row justify-between">
+                                {/* <div className="flex flex-row justify-between">
                                     <p className="text-lg font-serif text-gray-800"> Subtotal </p>
-                                    <p className="text-lg font-serif text-gray-800"> CA$0.00 </p>
-                                </div>
-                                <div className="flex flex-row justify-between">
+
+                                    {cartItems.map((item) => (
+                                        <p className="text-lg font-serif text-gray-800"> CA${item.priceNum}.00 </p>
+
+                                    ))}
+
+                                    
+                                </div> */}
+
+                                {cartItems.map((item) => (
+                                    <div key={item.id} className="flex flex-row justify-between">
+                                        <p className="text-lg font-serif text-gray-800 truncate w-35"> {item.name} </p>
+                                        <p className="text-lg font-serif text-gray-800"> CA${item.priceNum}.00 </p>
+                                    </div>
+                                ))}
+
+                                
+                                {/* <div className="flex flex-row justify-between">
                                     <p className="text-lg font-serif text-gray-800"> Tax </p>
                                     <p className="text-lg font-serif text-gray-800"> CA$0.00 </p>
-                                </div>
+                                </div> */}
                             </div>
                             
                             <div className="flex flex-row justify-between">
                                 <p className="text-lg font-serif text-gray-800 font-bold"> Total </p>
-                                <p className="text-lg font-serif text-gray-800 font-bold"> CA$0.00 </p>
+                                <p className="text-lg font-serif text-gray-800 font-bold"> CA${totalPrice}.00 </p>
                             </div>
 
                             <motion.button className="bg-neutral-800 hover:bg-neutral-950 text-white rounded-full font-serif font-bold py-3"
