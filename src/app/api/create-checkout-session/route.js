@@ -3,25 +3,38 @@ import Stripe from 'stripe';
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 export async function POST(req) {
-  const { priceId, personalizations, productName } = await req.json();
+    // const { priceId, personalizations, productName } = await req.json();
+    const products = await req.json()
 
     try {
         const session = await stripe.checkout.sessions.create({
             mode: 'payment',
             payment_method_types: ['card'],
-            line_items: [
+            line_items: products.map((product) => ( // To allow for buying multiple products
                 {
-                    price: priceId,
+                    price: product.priceId,
                     quantity: 1,
-                },
-            ],
+                }
+            )),
             success_url: 'http://localhost:3000/success',
             cancel_url: 'http://localhost:3000/cancel',
             payment_intent_data: {
-                metadata: {
-                    personalization_1: personalizations?.[0] || '',
-                    personalization_2: personalizations?.[1] || '',
-                }
+                // metadata: {
+                //     personalization_1: personalizations?.[0] || '',
+                //     personalization_2: personalizations?.[1] || '',
+                // }
+
+                // Flatten the array
+                metadata: Object.assign(
+                    {},
+                    ...products.map((product, index) => ({
+                        [`product_${index + 1}_name`]: product.productName,
+                        [`product_${index + 1}_personalization_1`]: product.personalizations?.[0] || '',
+                        [`product_${index + 1}_personalization_2`]: product.personalizations?.[1] || '',
+                    }))
+                )
+                
+                
             }
         });
 
