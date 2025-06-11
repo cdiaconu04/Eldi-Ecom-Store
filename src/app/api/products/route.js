@@ -15,6 +15,7 @@ export async function GET() {
                     description: product.description,
                     image: product.images[0],
                     price: prices.data[0],
+                    priceID: product.priceID
                 };
             })
         );

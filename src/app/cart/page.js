@@ -6,6 +6,10 @@ import { ChevronRight } from 'lucide-react';
 import Link from "next/link";
 import { Trash2 } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { loadStripe } from '@stripe/stripe-js';
+import toast, { Toaster } from 'react-hot-toast';
+
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
 
 export default function CartPage() {
     function getTotalPrice(theItems) {
@@ -17,15 +21,46 @@ export default function CartPage() {
     }
 
     const { addToCart, removeFromCart, items: cartItems } = useCart();
-
     const [ totalPrice, setTotalPrice ] = useState(getTotalPrice(cartItems))
 
     useEffect(() => {
         setTotalPrice(getTotalPrice(cartItems))
     }, [cartItems]);
 
+    const handleCheckout = async () => {
+        if (cartItems.length == 0) {
+            toast.error('Cart is empty.');
+            return;
+        }
+
+        const stripe = await stripePromise;
+
+        const res = await fetch('/api/create-checkout-session', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(
+
+                cartItems.map((item) => ({
+                    priceId: item.priceID,
+                    personalizations: item.personalizations,
+                    productName: item.name,
+                }))
+                
+            ),
+        });
+
+        const data = await res.json();
+
+        if (data.url) {
+            window.location.href = data.url;
+        } else {
+            toast.error("Checkout session failed");
+        }
+    };
+
     return (
         <div>
+            <Toaster gutter={6000000}/>
             <Navbar moved={true} />
 
             <div className="w-full bg-stone-200">
@@ -135,9 +170,10 @@ export default function CartPage() {
                                 <p className="text-lg font-serif text-gray-800 font-bold"> CA${totalPrice}.00 </p>
                             </div>
 
-                            <motion.button className="bg-neutral-800 hover:bg-neutral-950 text-white rounded-full font-serif font-bold py-3"
+                            <motion.button className="bg-neutral-800 hover:bg-neutral-950 text-white rounded-full font-serif font-bold py-3 cursor-pointer"
                                 whileHover={{ scale: 1.03 }}
                                 whileTap={{ scale: 0.95 }}
+                                onClick={handleCheckout}
                             > Checkout </motion.button>
                         </div>
 
