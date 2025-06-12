@@ -241,7 +241,7 @@ export default function ProductPage() {
                                 {recentlyViewed.map((item, index) => (
                                     <Link key={index} href={`/products/${item.slug}`}>
                                         <button onClick={() => handleAddToRecents(item)}>
-                                            <motion.div className="flex flex-col justify-center items-center gap-2 hover:bg-white hover:rounded-xl p-3 hover:shadow-xl"
+                                            <motion.div className="flex flex-col justify-center items-center gap-2 hover:bg-white hover:rounded-xl p-3 hover:shadow-xl cursor-pointer"
                                                 whileHover={{ scale: 1.02 }}
                                                 whileTap={{ scale: 0.97 }}
                                             >

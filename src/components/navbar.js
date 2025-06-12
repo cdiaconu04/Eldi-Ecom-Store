@@ -26,19 +26,33 @@ export default function Navbar({moved}) {
 
     return (
         <nav className={finalStyle}>
-            <div className="flex items-center justify-between mx-auto px-4 py-2">
+            <div className="flex items-center justify-between mx-auto px-4 py-1">
                 <Link className="flex items-center space-x-3 rtl:space-x-reverse" href="/"
                     // whileHover={{ scale: 1.05 }}
                 >
                     {/* <p className="text-white font-bold font-serif text-5xl p-7"> eldi </p> */}
-                    <img src="/eldilogo.png" width={110} height={110} className="p-3"/>
+                    <img src="/eldilogo.png" width={90} height={90} className="p-3"/>
                 </Link>
 
                 <div className="flex flex-row justify-center items-center gap-6">
                     <ul className="font-medium flex flex-row space-x-2 rtl:space-x-reverse">
                         <li className="group flex flex-col hover:bg-white rounded-full">
-                            <Link className="group block px-5 py-2 text-white font-bold rounded-sm border-0 group-hover:text-gray-950 transition duration-300" href="/products"> Products </Link>
+                            <Link className="group block px-4 py-1 text-white text-lg font-bold rounded-sm border-0 group-hover:text-gray-950 transition duration-300" href="/"> Home </Link>
                         </li>
+                        <li className="group flex flex-col hover:bg-white rounded-full">
+                            <Link className="group block px-4 py-1 text-white text-lg font-bold rounded-sm border-0 group-hover:text-gray-950 transition duration-300" href="/products"> Products </Link>
+                        </li>
+                        {/* <li className="group flex flex-col hover:bg-white rounded-full">
+                            <a className="group block px-5 py-2 text-white font-bold rounded-sm border-0 group-hover:text-gray-950 transition duration-300"> Contact us </a>
+                        </li> */}
+                    </ul>
+                </div>
+
+                <div className="flex flex-row justify-center items-center gap-6">
+                    <ul className="font-medium flex flex-row space-x-2 rtl:space-x-reverse">
+                        {/* <li className="group flex flex-col hover:bg-white rounded-full">
+                            <Link className="group block px-5 py-2 text-white font-bold rounded-sm border-0 group-hover:text-gray-950 transition duration-300" href="/products"> Products </Link>
+                        </li> */}
                         {/* <li className="group flex flex-col hover:bg-white rounded-full">
                             <a className="group block px-5 py-2 text-white font-bold rounded-sm border-0 group-hover:text-gray-950 transition duration-300"> Contact us </a>
                         </li> */}
