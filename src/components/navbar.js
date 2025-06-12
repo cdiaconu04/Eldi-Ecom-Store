@@ -39,9 +39,9 @@ export default function Navbar({moved}) {
                         <li className="group flex flex-col hover:bg-white rounded-full">
                             <Link className="group block px-5 py-2 text-white font-bold rounded-sm border-0 group-hover:text-gray-950 transition duration-300" href="/products"> Products </Link>
                         </li>
-                        <li className="group flex flex-col hover:bg-white rounded-full">
+                        {/* <li className="group flex flex-col hover:bg-white rounded-full">
                             <a className="group block px-5 py-2 text-white font-bold rounded-sm border-0 group-hover:text-gray-950 transition duration-300"> Contact us </a>
-                        </li>
+                        </li> */}
                     </ul>
 
                     <Link href="/cart">
