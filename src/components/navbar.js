@@ -19,7 +19,7 @@ export default function Navbar({moved}) {
     
     let productsStyle = hydrated && pathname === "/products" ? "group block px-3 py-2 text-gray-950 bg-white font-bold rounded-full border-0 transition duration-300" :
         "group block px-5 py-2 text-white font-bold rounded-sm border-0 hover:text-white transition duration-300 hover:underline"
-
+    
     useEffect(() => {
         setHydrated(true);
     }, []);
@@ -49,20 +49,12 @@ export default function Navbar({moved}) {
                 </div>
 
                 <div className="flex flex-row justify-center items-center gap-6">
-                    <ul className="font-medium flex flex-row space-x-2 rtl:space-x-reverse">
-                        {/* <li className="group flex flex-col hover:bg-white rounded-full">
-                            <Link className="group block px-5 py-2 text-white font-bold rounded-sm border-0 group-hover:text-gray-950 transition duration-300" href="/products"> Products </Link>
-                        </li> */}
-                        {/* <li className="group flex flex-col hover:bg-white rounded-full">
-                            <a className="group block px-5 py-2 text-white font-bold rounded-sm border-0 group-hover:text-gray-950 transition duration-300"> Contact us </a>
-                        </li> */}
-                    </ul>
 
                     <Link href="/cart">
                         <div className="relative">
                             <motion.div className="group p-2 hover:bg-white rounded-full transition"
-                                whileHover={{ scale: 1.03 }}
-                                whileTap={{ scale: 0.95 }}
+                                // whileHover={{ scale: 1.03 }}
+                                // whileTap={{ scale: 0.95 }}
                             >
                                     
                                 <ShoppingCart className="text-white group-hover:text-gray-950"/>
