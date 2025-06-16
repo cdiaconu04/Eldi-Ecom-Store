@@ -36,10 +36,10 @@ export default function Navbar({moved}) {
 
                 <div className="flex flex-row justify-center items-center gap-6">
                     <ul className="font-medium flex flex-row space-x-2 rtl:space-x-reverse">
-                        <li className="group flex flex-col hover:bg-white rounded-full">
+                        <li className="group flex flex-col hover:bg-white rounded-full transition">
                             <Link className="group block px-4 py-1 text-white text-lg font-bold rounded-sm border-0 group-hover:text-gray-950 transition duration-300" href="/"> Home </Link>
                         </li>
-                        <li className="group flex flex-col hover:bg-white rounded-full">
+                        <li className="group flex flex-col hover:bg-white rounded-full transition">
                             <Link className="group block px-4 py-1 text-white text-lg font-bold rounded-sm border-0 group-hover:text-gray-950 transition duration-300" href="/products"> Products </Link>
                         </li>
                         {/* <li className="group flex flex-col hover:bg-white rounded-full">

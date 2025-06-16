@@ -27,7 +27,7 @@ export const products = [
             inpackage: "You will receive the watch strap gift-packaged in a kraft envelope tied with natural fiber cord.",
             materials: "The watch strap is crafted from American Alligator leather, has a vegetable tanned leather lining, and is fitted with stainless steel spring bars and buckle. Gold finish or black finish buckles may be available - please enquire prior to placing your order so we can confirm. We apply a thin layer of mink oil on the straps before shipping. With your further minimum maintenance and care, the watch strap will stand for a long time to come as a statement of your personal style and love about our environment.",
         },
-        priceID: "price_1RY97aPNpeXCusNEtdOkhAri",
+        priceID: "price_1RaMyKPNpeXCusNEN24TEF3C",
         etsyLink: "https://www.etsy.com/ca/listing/1680365950/handmade-watch-strap-alligator-leather",
     },
     {   
@@ -58,7 +58,7 @@ export const products = [
             inpackage: "You will receive the watch strap gift-packaged in a kraft envelope tied with natural fiber cord. (pictured).",
             materials: "The watch strap is handcrafted from black or brown Italian vegetable tanned leather. The strap is fitted with stainless steel attachments and buckle in black finish. The buckle style may vary, depending on availability.We apply a thin layer of mink oil on the straps before shipping. With your further minimum maintenance and care, the watch strap will stand for a long time to come as a statement of your personal style and love about our environment.",
         },
-        priceID: "price_1RY97aPNpeXCusNEtdOkhAri",
+        priceID: "price_1RajKOPNpeXCusNELybScFe6",
         etsyLink: "https://www.etsy.com/ca/listing/1898999741/handmade-custom-apple-watch-leather",
     },
     {   
@@ -90,7 +90,7 @@ export const products = [
             inpackage: "You will receive the watch strap gift-packaged in a kraft envelope tied with natural fiber cord. (pictured).",
             materials: "The watch strap is crafted from Black Pueblo vegetable tanned leather produced by the Badalassi Carlo tannery, in Italy. The strap is saddle stitched with waxed polyester thread and fitted with stainless steel spring bars and buckle. Gold finish or black finish buckles may be available - please enquire prior to placing your order so we can confirm. We apply a thin layer of mink oil on the straps before shipping. With your further minimum maintenance and care, the watch strap will stand for a long time to come as a statement of your personal style and love about our environment.",
         },
-        priceID: "price_1RY97aPNpeXCusNEtdOkhAri",
+        priceID: "price_1RajLQPNpeXCusNEX4nk6GMK",
         etsyLink: "https://www.etsy.com/ca/listing/1218783312/handmade-watch-strap-slim-and-supple",
     },
     {   
@@ -119,7 +119,7 @@ export const products = [
             inpackage: "You will receive the watch strap gift-packaged in a kraft envelope tied with natural fiber cord. (pictured).",
             materials: "The watch strap is crafted from Black Pueblo vegetable tanned leather produced by the Badalassi Carlo tannery, in Italy. The strap is saddle stitched with waxed polyester thread and fitted with stainless steel spring bars and buckle. Gold finish or black finish buckles may be available - please enquire prior to placing your order so we can confirm. We apply a thin layer of mink oil on the straps before shipping. With your further minimum maintenance and care, the watch strap will stand for a long time to come as a statement of your personal style and love about our environment.",
         },
-        priceID: "price_1RY97aPNpeXCusNEtdOkhAri",
+        priceID: "price_1RajMXPNpeXCusNEoY0hdlY2",
         etsyLink: "https://www.etsy.com/ca/listing/1551924858/handmade-watch-strap-slim-and-supple",
     },
     {   
@@ -210,7 +210,7 @@ export const products = [
             inpackage: "The shipping packaging will have the watch strap gift-packaged in a black or brown envelope, tied with a natural fiber string.",
             materials: "The watch strap is crafted from “Cognac” color oiled “Vachetta” leather that is produced with the antique \"Tuscan Method\", which is considered the best vegetable tanning process in the world. It follows a know-how present only in Italy, belonging to the ancient tradition of local tanneries. The leathers we use are full grain leathers, characterized by a beautiful aniline finish surface, a very natural look and a deep and rich color which will only grow better with time. This strap exhibits a smooth Italian vegetable tanned leather lining and fine saddle stitching with a beautiful and durable waxed round linen thread. The edges are beveled, sanded, sealed, and carefully burnished by hand to a perfectly warm shine that adds character and durability. The strap is fitted with stainless steel buckle and spring bars. Gold finish or black finish buckles may be available - please enquire prior to placing your order so we can confirm. We apply a thin layer of mink oil on the straps before shipping. With your further minimum maintenance and care, this strap will stand for a long time to come as a statement of your personal style and love about our environment.",
         },
-        priceID: "price_1RYB47PNpeXCusNE9Y4yUPoG",
+        priceID: "price_1RajNtPNpeXCusNEnhJmePsf",
         etsyLink: "https://www.etsy.com/ca/listing/1111306022/handmade-vegetable-tanned-leather-watch",
     },
     {   
@@ -241,7 +241,7 @@ export const products = [
             inpackage: "You will receive the watch strap gift-packaged in a kraft envelope tied with natural fiber cord. (pictured).",
             materials: "The watch strap is crafted from Black Pueblo vegetable tanned leather produced by the Badalassi Carlo tannery, in Italy. The strap is saddle stitched with waxed polyester thread and fitted with stainless steel spring bars and buckle. Gold finish or black finish buckles may be available - please enquire prior to placing your order so we can confirm. We apply a thin layer of mink oil on the straps before shipping. With your further minimum maintenance and care, the watch strap will stand for a long time to come as a statement of your personal style and love about our environment.",
         },
-        priceID: "price_1RY97aPNpeXCusNEtdOkhAri",
+        priceID: "price_1RajP3PNpeXCusNE7uUZChCH",
         etsyLink: "https://www.etsy.com/ca/listing/1394785013/handmade-full-grain-buttero-vegetable",
     },
     {   
@@ -270,7 +270,7 @@ export const products = [
             inpackage: "The shipping packaging will have the wallet gift-packaged in a black, soft-touch finish, envelope, tied with a natural fiber string (pictured).",
             materials: "The wallet is crafted from the best Italian vegetable tanned leathers - the exquisite “Buttero” vegetable tanned leather, produced in Tuscany by the renown \"Conceria Walpier\" tannery. The leather we use for this wallet is a full grain leather, characterized by a beautiful aniline finish surface, a very natural look and a deep and rich color which will only grow better with time. The wallet exhibits fine saddle stitching with a beautiful and durable round polyester thread, that is equally vibrant in color as well as strong and wear resistant. The edges of the wallet are beveled, sanded, sealed, and carefully burnished by hand to a perfectly warm shine that adds character and durability. We apply a thin layer of mink oil on the product, before shipping. With your further minimum maintenance and care, this wallet will stand for a long time to come as a statement of your personal style and love about our environment.",
         },
-        priceID: "price_1RY97aPNpeXCusNEtdOkhAri",
+        priceID: "price_1RajUNPNpeXCusNEoES7q4wc",
         etsyLink: "https://www.etsy.com/ca/listing/1394642293/handmade-full-grain-buttero-vegetable",
     },
     {   
@@ -302,7 +302,7 @@ export const products = [
             inpackage: "The shipping packaging will have the wallet in a canvas bag.",
             materials: "The wallet is crafted from the best Italian vegetable tanned leathers, in cognac, black, and natural colors, as follows: “Cognac” and \"Natural\" color wallets are made from oiled “Vachetta” leather that is produced with the antique \"Tuscan Method\", which is considered the best vegetable tanning process in the world. It follows a know-how present only in Italy , belonging to the ancient tradition of local tanneries.- \"Black\" color wallets are made from the exquisite “Buttero” vegetable tanned leather, produced in Tuscany, Italy by the renown \"Conceria Walpier\" tannery. The leathers we use are full grain leathers, characterized by a beautiful aniline finish surface, a very natural look and a deep and rich color which will only grow better with time. The wallet exhibits fine saddle stitching with a beautiful and durable waxed round linen thread, that is equally vibrant in color as well as strong and wear resistant. Please choose the thread color in the \"Options\" section. Personalization is available upon request - please enquire for styles and pricing. The edges of the wallet are beveled, sanded, sealed, and carefully burnished by hand to a perfectly warm shine that adds character and durability. We apply a thin layer of mink oil on the product, before shipping. With your further minimum maintenance and care, this wallet will stand for a long time to come as a statement of your personal style and love about our environment.",
         },
-        priceID: "price_1RY97aPNpeXCusNEtdOkhAri",
+        priceID: "price_1RajRYPNpeXCusNEELSOaAvS",
         etsyLink: "https://www.etsy.com/ca/listing/1370696354/handmade-handstitched-full-grain",
     },
     {

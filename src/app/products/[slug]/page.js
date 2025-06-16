@@ -80,16 +80,6 @@ export default function ProductPage() {
 
         const stripe = await stripePromise;
 
-        // const res = await fetch('/api/create-checkout-session', {
-        //     method: 'POST',
-        //     headers: { 'Content-Type': 'application/json' },
-        //     body: JSON.stringify({ 
-        //         priceId: product.priceID,
-        //         personalizations: selectedValues,
-        //         productName: product.name,
-        //     }),
-        // });
-
         const res = await fetch('/api/create-checkout-session', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
