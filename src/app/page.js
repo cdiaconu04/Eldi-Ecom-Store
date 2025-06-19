@@ -37,11 +37,20 @@ export default function Home() {
 
   function getLogoDimensions() {
     if (windowSize == "xs") return 100
-    else if (windowSize == "sm") return 130;
-    else if (windowSize == "md") return 160;
-    else if (windowSize == "lg") return 190;
+    else if (windowSize == "sm") return 120;
+    else if (windowSize == "md") return 170;
+    else if (windowSize == "lg") return 180;
     else if (windowSize == "xl") return 220;
     else return 220;
+  }
+
+  function getFeaturedPicDimensions() {
+    if (windowSize == "xs") return 100
+    else if (windowSize == "sm") return 130;
+    else if (windowSize == "md") return 220;
+    else if (windowSize == "lg") return 250;
+    else if (windowSize == "xl") return 280;
+    else return 320;
   }
 
   useEffect(() => {
@@ -132,11 +141,15 @@ export default function Home() {
 
       {/* Popular products */}
       <div className="w-full bg-stone-100">
-        <div className="max-w-screen-xl mx-auto py-20 flex flex-col gap-17 items-center justify-center relative overflow-hidden">
+        <div className="max-w-screen-xl mx-auto flex flex-col items-center justify-center relative overflow-hidden
+        2xl:py-20 xl:py-15 lg:py-10 
+        2xl:gap-17 xl:gap-11 lg:gap-6"
+        >
           
-          <div>
-            <h2 className="text-4xl font-bold font-serif text-black"> Featured Products </h2>
-          </div>
+          
+          <h2 className="font-bold font-serif text-black
+            2xl:text-4xl xl:text-4xl lg:text-3xl md:text-3xl sm:text-2xl text:xl"
+          > Featured Products </h2>
 
           <div className="grid grid-cols-3 gap-10">
             
@@ -144,10 +157,12 @@ export default function Home() {
               <Link key={product.id} href={`/products/${product.slug}`}>
 
                 <button onClick={() => handleAddToRecents(product)}>
-                  <motion.div className="flex flex-col items-center justify-center gap-5 hover:bg-white hover:rounded-xl p-5 hover:shadow-xl cursor-pointer"
+                  <motion.div className="flex flex-col items-center justify-center gap-5 hover:bg-white hover:rounded-xl hover:shadow-xl cursor-pointer
+                    md:p-2 lg:p-3 xl:p-4 2xl:p-5
+                  "
                     whileHover={{ scale: 1.02 }}
                   >
-                    <img src={product.pics[0].pic} className="shadow-xl rounded-md" width={320} height={320}/>
+                    <img src={product.pics[0].pic} className="shadow-xl rounded-md" width={getFeaturedPicDimensions()} height={getFeaturedPicDimensions()}/>
 
                     <div className="flex flex-col">
                       <p className="text-gray-950 text-lg font-serif"> {product.name} </p>
@@ -163,7 +178,9 @@ export default function Home() {
 
           
           <Link href="/products" className="rounded-full">
-            <motion.button className="w-fit bg-stone-800 font-serif font-bold px-5 py-2 hover:bg-stone-950 rounded-full cursor-pointer"
+            <motion.button className="w-fit bg-stone-800 font-serif font-bold px-5 py-2 hover:bg-stone-950 rounded-full cursor-pointer
+              text-xs sm:text-sm md:text-sm lg:text-base xl:text-base 2xl-text-base
+            "
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
             > View all </motion.button>
