@@ -36,8 +36,9 @@ export default function Home() {
   }
 
   function getLogoDimensions() {
-    if (windowSize == "sm") return 220;
-    else if (windowSize == "md") return 220;
+    if (windowSize == "xs") return 100
+    else if (windowSize == "sm") return 130;
+    else if (windowSize == "md") return 160;
     else if (windowSize == "lg") return 190;
     else if (windowSize == "xl") return 220;
     else return 220;
@@ -76,8 +77,8 @@ export default function Home() {
       else if (windowWidth >= 1280) setWindowSize("xl");
       else if (windowWidth >= 1024) setWindowSize("lg");
       else if (windowWidth >= 768) setWindowSize("md");
-      else setWindowSize("sm");
-
+      else if (windowWidth >= 640) setWindowSize("sm");
+      else setWindowSize("xs")
     };
 
     handleResize();
@@ -103,14 +104,14 @@ export default function Home() {
             {/* <h1 className="text-white text-9xl font-bold z-10 font-serif">eldi</h1> */}
             <img src="/eldilogocropped.png" width={getLogoDimensions()} height={getLogoDimensions()} className="py-2"/>
             
-            <h2 className="text-white font-bold z-10 font-serif py-3
+            <h2 className="text-Swhite font-bold z-10 font-serif py-3
               2xl:text-3xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg"
               > Elegant, Timeless, Leather Goods. </h2>
             
             {/* sm:text-sm md:text-md lg:text-md xl:text-md 2xl:text-lg */}
             <Link href="/products" className="w-fit rounded-full">
               <motion.button className="w-fit bg-stone-800 font-serif font-bold px-5 py-2 hover:bg-stone-950 rounded-full mouse-point cursor-pointer
-                sm:text-sm md:text-sm lg:text-md xl:text-md 2xl:text-md"
+                text-xs sm:text-sm md:text-sm lg:text-base xl:text-base 2xl-text-base"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
               > View Products </motion.button>
