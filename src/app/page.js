@@ -151,8 +151,8 @@ export default function Home() {
       {/* Popular products */}
       <div className="w-full bg-stone-100">
         <div className="max-w-screen-xl mx-auto flex flex-col items-center justify-center relative overflow-hidden
-        2xl:py-20 xl:py-15 lg:py-10 py-10
-        2xl:gap-17 xl:gap-11 lg:gap-6"
+          2xl:py-20 xl:py-15 lg:py-10 py-10
+          2xl:gap-17 xl:gap-11 lg:gap-6 gap-6"
         >
           
           
@@ -160,22 +160,29 @@ export default function Home() {
             2xl:text-4xl xl:text-4xl lg:text-3xl md:text-3xl sm:text-2xl text:xl"
           > Featured Products </h2>
 
-          <div className="grid grid-cols-3 gap-10">
+          <div className="grid grid-cols-3 justify
+            2xl:gap-10 xl:gap-10 lg:gap-7 md:gap-5
+          ">
             
             {featuredProducts.map(product => (
               <Link key={product.id} href={`/products/${product.slug}`}>
 
                 <button onClick={() => handleAddToRecents(product)}>
                   <motion.div className="flex flex-col items-center justify-center gap-5 hover:bg-white hover:rounded-xl hover:shadow-xl cursor-pointer
-                    md:p-2 lg:p-3 xl:p-4 2xl:p-5
+                    p-2 md:p-2 lg:p-3 xl:p-4 2xl:p-5
                   "
                     whileHover={{ scale: 1.02 }}
                   >
                     <img src={product.pics[0].pic} className="shadow-xl rounded-md" width={getFeaturedPicDimensions()} height={getFeaturedPicDimensions()}/>
 
                     <div className="flex flex-col">
-                      <p className="text-gray-950 text-lg font-serif"> {product.name} </p>
-                      <p className="text-gray-950 text-md font-serif font-bold text-center"> {product.price} </p>
+                      <p className="text-gray-950 font-serif
+                        2xl:text-lg xl:text-lg lg:text-base sm:text-base text-sm 
+                        2xl:max-w-[200ch] xl:max-w-[200ch] lg:max-w-[200ch] md:max-w-[20ch] sm:max-w-[20ch] max-w-[20ch] 
+                      "> {product.name} </p>
+                      <p className="text-gray-950 font-serif font-bold text-center
+                        2xl:text-base xl:text-base lg:text-sm sm:text-sm text-xs
+                      "> CA{product.price} </p>
                     </div>
 
                   </motion.div>

@@ -362,8 +362,8 @@ export const products = [
 
     {
         id: 6,
-        slug: "west-queen-goth-cuff-bracelet",
-        name: "West Queen Goth Cuff Bracelet",
+        slug: "goth-cuff-bracelet",
+        name: "Goth Cuff Bracelet",
         type: "Bracelets",
         pics: [
             {id: 0, pic: "/products/westqueengothbracelet/pic1.png"},
