@@ -53,6 +53,15 @@ export default function Home() {
     else return 320;
   }
 
+  function getAboutPicDimensions() {
+    if (windowSize == "xs") return 130
+    else if (windowSize == "sm") return 160;
+    else if (windowSize == "md") return 250;
+    else if (windowSize == "lg") return 280;
+    else if (windowSize == "xl") return 310;
+    else return 350;
+  }
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -142,7 +151,7 @@ export default function Home() {
       {/* Popular products */}
       <div className="w-full bg-stone-100">
         <div className="max-w-screen-xl mx-auto flex flex-col items-center justify-center relative overflow-hidden
-        2xl:py-20 xl:py-15 lg:py-10 
+        2xl:py-20 xl:py-15 lg:py-10 py-10
         2xl:gap-17 xl:gap-11 lg:gap-6"
         >
           
@@ -192,21 +201,33 @@ export default function Home() {
 
       {/* About */}
       <div className="w-full bg-stone-300">
-        <div className="max-w-screen-xl mx-auto py-20 flex flex-col gap-13 relative overflow-hidden">
-          <h2 className="text-4xl font-serif font-bold text-black"> About Us </h2>
+        <div className="max-w-screen-xl mx-auto flex flex-col relative overflow-hidden
+          2xl:py-20 xl:py-15 lg:py-10 py-10
+          2xl:gap-13 xl:gap-10 lg:gap-7
+          2xl:px-0 xl:px-11 lg:px-20 px-20
+          xl:gap-2 lg:gap-5 md:gap-5 sm:gap-5 gap-5
+        "
+        >
+          <h2 className="text-4xl font-serif font-bold text-black
+            2xl:text-4xl xl:text-4xl lg:text-3xl md:text-3xl sm:text-2xl text:xl"
+          > About Us </h2>
 
           <div className="grid grid-cols-3 gap-13">
-            <div className="flex flex-col gap-17"> 
-              <img src="/crafting.png" width={350} height={350} className="rounded-md shadow-lg"/>
+            <div className="flex flex-col gap-17 justify-center"> 
+              <img src="/crafting.png" width={getAboutPicDimensions()} height={getAboutPicDimensions()} className="rounded-md shadow-lg"/>
             </div>
 
             <div className="col-span-2 flex items-center justify-between">
 
               <div className="flex flex-col gap-8">
-                <p className="text-gray-800 text-lg font-serif col-span-2">
+                <p className="text-gray-800 font-serif col-span-2
+                  2xl:text-lg xl:text-lg lg:text-base md:text-sm sm:text-xs text-xs
+                ">
                   ElDi offers handmade leather products focused on quality, minimalism, and functionality. We made it our mission to  fascinate with the  craft of the artisan whose lasting creations are in harmony with the environment and inviting to a lifestyle that is aware of our impact on the planet.
                 </p>
-                <p className="text-gray-800 text-lg font-serif">
+                <p className="text-gray-800 font-serif
+                  2xl:text-lg xl:text-lg lg:text-base md:text-sm sm:text-xs text-xs
+                ">
                   Our products are handmade in a family run atelier in the Greater Toronto Area, Canada, using traditional techniques and leathers from the best tanneries in the world.  Either ordered for yourself or for someone you care about, the product is delivered in a package that adds to the excitement of receiving a very special gift.
                 </p>
               </div>
