@@ -10,6 +10,9 @@ export async function POST(req) {
         const session = await stripe.checkout.sessions.create({
             mode: 'payment',
             payment_method_types: ['card'],
+            shipping_address_collection: {
+                allowed_countries: ['CA', 'US', 'GB'],
+            },
             line_items: products.map((product) => ( // To allow for buying multiple products
                 {
                     price: product.priceId,
@@ -19,12 +22,6 @@ export async function POST(req) {
             success_url: 'http://localhost:3000/success',
             cancel_url: 'http://localhost:3000/cancel',
             payment_intent_data: {
-                // metadata: {
-                //     personalization_1: personalizations?.[0] || '',
-                //     personalization_2: personalizations?.[1] || '',
-                // }
-
-                // Flatten the array
                 metadata: Object.assign(
                     {},
                     ...products.map((product, index) => ({
