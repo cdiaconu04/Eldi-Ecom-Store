@@ -43,15 +43,15 @@ export default function Products() {
 
     useEffect(() => {
         const handleResize = () => {
-          setWindowWidth(window.innerWidth);
-          setWindowHeight(window.innerHeight);
-    
-          if (windowWidth >= 1536) setWindowSize("2xl");
-          else if (windowWidth >= 1280) setWindowSize("xl");
-          else if (windowWidth >= 1024) setWindowSize("lg");
-          else if (windowWidth >= 768) setWindowSize("md");
-          else if (windowWidth >= 640) setWindowSize("sm");
-          else setWindowSize("xs")
+            setWindowWidth(window.innerWidth);
+            setWindowHeight(window.innerHeight);
+        
+            if (windowWidth >= 1536) setWindowSize("2xl");
+            else if (windowWidth >= 1280) setWindowSize("xl");
+            else if (windowWidth >= 1024) setWindowSize("lg");
+            else if (windowWidth >= 768) setWindowSize("md");
+            else if (windowWidth >= 640) setWindowSize("sm");
+            else setWindowSize("xs");
         };
     
         handleResize();
