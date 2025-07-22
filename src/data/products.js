@@ -64,7 +64,7 @@ export const products = [
     {   
         id: 8,
         slug: "badalassi-carlo-watch-strap",
-        name: "Badalassi Carlo Black Watch Strap",
+        name: "Badalassi Black Watch Strap",
         type: "Watch straps",
         pics: [
             {id: 0, pic: "/products/badalassicarlowatchstrap/pic1.png"},
@@ -96,7 +96,7 @@ export const products = [
     {   
         id: 9,
         slug: "badalassi-carlo-olive-watch-strap",
-        name: "Badalassi Carlo Olive Watch Strap",
+        name: "Badalassi Olive Watch Strap",
         type: "Watch straps",
         pics: [
             {id: 0, pic: "/products/badalassicarloolivewatchstrap/pic1.png"},
