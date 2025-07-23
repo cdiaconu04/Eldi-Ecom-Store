@@ -199,9 +199,19 @@ export default function ProductPage() {
                                 <h2 className="font-bold font-serif text-gray-950
                                     2xl:text-2xl xl:text-xl lg:text-xl md:text-lg sm:text-base
                                 "> {product.name} </h2>
-                                <p className="font-serif font-bold text-gray-950
-                                    2xl:text-xl xl:text-lg lg:text-lg md:text-base sm:text-sm text-xs 
-                                ">CA{product.price}</p>
+
+                                {product.price === product.originalPrice ? 
+                                    <p className="font-serif font-bold text-gray-950
+                                        2xl:text-xl xl:text-lg lg:text-lg md:text-base sm:text-sm text-xs 
+                                    ">CA{product.price}</p>
+                                                    :
+                                    <p className="text-gray-950 font-serif font-bold text-center
+                                        2xl:text-xl xl:text-lg lg:text-lg md:text-base sm:text-sm text-xs 
+                                    "> CA<span className="line-through text-green-700">{product.originalPrice}</span> {product.price} </p>            
+                                }
+                                
+
+
                                 <p className="font-serif text-gray-800
                                     2xl:text-lg xl:text-base lg:text-base md:text-sm sm:text-xs text-xs 
                                 "> {product.description} </p>
@@ -342,9 +352,18 @@ export default function ProductPage() {
                                                 <p className="font-serif text-gray-950
                                                     2xl:text-md xl:text-sm lg:text-sm md:text-sm text-xs 
                                                 ">{item.name}</p>
-                                                <p className="text-gray-950 font-serif font-bold text-center
-                                                    2xl:text-sm xl:text-sm text-xs
-                                                "> CA{item.price} </p>
+
+                                                {product.price === product.originalPrice ? 
+                                                    <p className="text-gray-950 font-serif font-bold text-center
+                                                        2xl:text-sm xl:text-sm text-xs
+                                                    "> CA{item.price} </p>
+                                                    :
+                                                    <p className="text-gray-950 font-serif font-bold text-center
+                                                        2xl:text-sm xl:text-sm text-xs
+                                                    "> CA<span className="line-through text-green-700">{product.originalPrice}</span> {product.price} </p>
+                                                
+                                                }
+                                                
                                             </motion.div>
                                         </button>
                                     </Link>

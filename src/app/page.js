@@ -180,9 +180,17 @@ export default function Home() {
                         2xl:text-lg xl:text-lg lg:text-base sm:text-base text-sm 
                         2xl:max-w-[200ch] xl:max-w-[200ch] lg:max-w-[200ch] md:max-w-[20ch] sm:max-w-[20ch] max-w-[20ch] 
                       "> {product.name} </p>
-                      <p className="text-gray-950 font-serif font-bold text-center
-                        2xl:text-base xl:text-base lg:text-sm sm:text-sm text-xs
-                      "> CA{product.price} </p>
+                      {product.price === product.originalPrice ? 
+                        <p className="text-gray-950 font-serif font-bold text-center
+                          2xl:text-base xl:text-base lg:text-sm sm:text-sm text-xs
+                        "> CA{product.price} </p>
+                        :
+                        <p className="text-gray-950 font-serif font-bold text-center
+                          2xl:text-base xl:text-base lg:text-sm sm:text-sm text-xs
+                        "> CA<span className="line-through text-green-700">{product.originalPrice}</span> {product.price} </p>
+
+                      }
+                      
                     </div>
 
                   </motion.div>

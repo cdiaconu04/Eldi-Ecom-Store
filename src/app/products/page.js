@@ -164,9 +164,19 @@ export default function Products() {
                                             <p className="text-gray-950 font-serif whitespace-normal break-words
                                                 xl:text-base md:text-sm text-xs
                                             "> {product.name} </p>
-                                            <p className="text-gray-950 font-serif font-bold text-center
-                                                lg:text-sm text-xs
-                                            "> CA{product.price} </p>
+                                            
+                                            {product.price === product.originalPrice ? 
+                                                <p className="text-gray-950 font-serif font-bold text-center
+                                                    lg:text-sm text-xs
+                                                "> CA{product.price} </p>
+                                                :
+                                                <p className="text-gray-950 font-serif font-bold text-center
+                                                    lg:text-sm text-xs
+                                                "> CA<span className="line-through text-green-700">{product.originalPrice}</span> {product.price} </p>
+                                            
+                                            }
+
+                                            
                                             
                                             {/* <div className="bg-green-400 rounded-full flex flex-row items-center justify-center w-fit px-2">
                                                 <p className="text-black text-sm font-serif text-center"> FREE Delivery </p>
