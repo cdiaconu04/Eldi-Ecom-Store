@@ -14,7 +14,7 @@ export default function Footer() {
                 <div className="flex flex-row gap-30">
                     <div className="flex flex-col gap-1">
                         <p className={`text-white font-bold font-serif ${headerTextSize}`}> Main </p>
-                        <Link className={`text-white font-serif hover:underline ${linkTextSize}`} href="/"> Landing </Link>
+                        <Link className={`text-white font-serif hover:underline ${linkTextSize}`} href="/"> Home </Link>
                         <Link className={`text-white font-serif hover:underline ${linkTextSize}`} href="/products"> Products </Link>
                     </div>
 
