@@ -21,9 +21,21 @@ export const products = [
         originalPriceNum: 110.00,
         description: "Handmade watch strap, alligator leather watch strap, slim and supple leather watch strap, two-layer watch strap, hand-stitched watch strap.",
         featured: false,
-        personalizable: false,
-        personalizationTypes: [],
-        personalizationOptions: [],
+        personalizable: true,
+        personalizationTypes: [
+            {id: 0, name: "Size and Length"},
+            {id: 1, name: "Alligator leather colour"},
+        ],
+        personalizationOptions: [
+            [
+                {id: 0, name: "18mm, S"}, {id: 1, name: "18mm, M"}, {id: 2, name: "18mm, L"}, {id: 3, name: "20mm, S"}, {id: 4, name: "20mm, M"}, {id: 5, name: "20mm, L"},
+                {id: 6, name: "22mm, S"}, {id: 7, name: "22mm, M"}, {id: 8, name: "22mm, L"}, {id: 9, name: "24mm, S"}, {id: 10, name: "24mm, M"}, {id: 11, name: "24mm, L"},
+            ],
+            [
+                {id: 0, name: "Dark Brown"}, {id: 1, name: "Brown"}, {id: 2, name: "Blue"}, {id: 3, name: "Light Grey"}, {id: 4, name: "Grey"}, 
+                {id: 5, name: "Black"}
+            ]
+        ],
         moreDetails: {
             description: "Made from a base layer of tan vegetable tanned leather and a top layer of American Alligator leather, the strap comes in your choice of 6 colors and is fitted with spring bars and a high quality stainless steel buckle. Gold finish and black finish buckles may be available as well - please ask before you order so we can confirm. We crafted this strap to comfortably sit on the wrist of the wearer and to complement any watch. The watch strap is stitched by hand with durable polyester thread. The edges are painted by hand to a smooth and durable finish and the characteristic grain of the alligator leather is present in all color options. This watch strap is offered in S, M, and L lengths, for 18mm, 20 mm, 22 mm, and 24 mm lug widths, in tapered design. In a tapered design, the width changes from the watch lugs to the buckle or from watch lugs to the area of the long strap with pin holes by 2 mm. For example, a tapered watch strap can be 20 mm at the watch lugs and 18 mm at the buckle. The length of the strap is defined by the individual lengths of the short (buckle) and long (holes) sides, exclusive of buckle, as follows: (S : 65 mm / 110 mm, M : 70 mm / 120 mm, L: 80 mm / 130 mm). Choose the size of the strap and your preferred alligator leather color in the options section. If you need a different size than you can find in our list, please choose \"Custom\" in the size options and provide the sizing details in the order notes.",
             inpackage: "You will receive the watch strap gift-packaged in a kraft envelope tied with natural fiber cord.",
@@ -88,9 +100,21 @@ export const products = [
         originalPriceNum: 76.00,
         description: "Handmade watch strap, slim and supple vegetable tanned leather watch strap, Badalassi Carlo black leather watch strap.",
         featured: false,
-        personalizable: false,
-        personalizationTypes: [],
-        personalizationOptions: [],
+        personalizable: true,
+        personalizationTypes: [
+            {id: 0, name: "Size and Length"}, {id: 1, name: "Thread Colour"}
+        ],
+        personalizationOptions: [
+            [
+                {id: 0, name: "18mm, S"}, {id: 1, name: "18mm, M"}, {id: 2, name: "18mm, L"}, {id: 3, name: "20mm, S"}, {id: 4, name: "20mm, M"}, {id: 5, name: "20mm, L"},
+                {id: 6, name: "22mm, S"}, {id: 7, name: "22mm, M"}, {id: 8, name: "22mm, L"}, {id: 9, name: "24mm, S"}, {id: 10, name: "24mm, M"}, {id: 11, name: "24mm, L"},
+            ],
+            [
+                {id: 0, name: "1 - Burgundy"}, {id: 1, name: "2 - Orange"}, {id: 2, name: "3 - Brown"}, {id: 3, name: "4 - Dark Olive"}, {id: 4, name: "5 - Light Grey"}, 
+                {id: 5, name: "6 - Dark Brown"}, {id: 6, name: "7 - Red"}, {id: 7, name: "8 - Light Blue"}, {id: 8, name: "9 - Navy"}, {id: 9, name: "10 - Grey"}, 
+                {id: 10, name: "11 - White"}, {id: 11, name: "12 - Black"}, 
+            ]
+        ],
         moreDetails: {
             description: "Made from Black Pueblo vegetable tanned leather supplied by the Badalassi Carlo tannery from Italy, this strap exhibits saddle stitching in your choice of 10 colors with a durable waxed round polyester thread. The Badalassi Carlo Tannery in Italy is well known for their premium vegetable tanned leathers and the beautiful colors that they are able to produce. The Pueblo is their top grade full grain leather and has a supple feel and a unique rustic look that develops an amazing patina as it ages. We crafted this beautiful leather into a 2 mm thick strap which sits comfortably on the wrist of the wearer and complements any watch. The edges are beveled and burnished by hand to a smooth finish that adds character and durability; the leather strap is fitted with spring bars and a high quality stainless steel buckle. This watch strap is offered in S, M, and L lengths, for 18mm, 20 mm, 22 mm, and 24 mm lug widths, in tapered design. In a tapered design, the width changes from the watch lugs to the buckle or from watch lugs to the area of the long strap with pin holes by 2 mm. For example, a tapered watch strap can be 20 mm at the watch lugs and 18 mm at the buckle. The length of the strap is defined by the individual lengths of the short (buckle) and long (holes) sides, as follows: (S : 65 mm / 110 mm) (M : 70 mm / 120 mm) (L: 80 mm / 130 mm). Choose the size of the strap and your preferred stitching thread color in the variations section of the order. While not shown in the picture, \"white\" and \"black\" thread options are available. If you need a custom width / length please choose the \"Custom\" option and provide the sizing details in the order notes.",
             inpackage: "You will receive the watch strap gift-packaged in a kraft envelope tied with natural fiber cord. (pictured).",
@@ -119,9 +143,21 @@ export const products = [
         originalPriceNum: 76.00,
         description: "Handmade watch strap, slim and supple vegetable tanned leather watch strap, Badalassi Carlo black leather watch strap.",
         featured: false,
-        personalizable: false,
-        personalizationTypes: [],
-        personalizationOptions: [],
+        personalizable: true,
+        personalizationTypes: [
+            {id: 0, name: "Size and Length"}, {id: 1, name: "Thread Colour"}
+        ],
+        personalizationOptions: [
+            [
+                {id: 0, name: "18mm, S"}, {id: 1, name: "18mm, M"}, {id: 2, name: "18mm, L"}, {id: 3, name: "20mm, S"}, {id: 4, name: "20mm, M"}, {id: 5, name: "20mm, L"},
+                {id: 6, name: "22mm, S"}, {id: 7, name: "22mm, M"}, {id: 8, name: "22mm, L"}, {id: 9, name: "24mm, S"}, {id: 10, name: "24mm, M"}, {id: 11, name: "24mm, L"},
+            ],
+            [
+                {id: 0, name: "1 - Burgundy"}, {id: 1, name: "2 - Orange"}, {id: 2, name: "3 - Brown"}, {id: 3, name: "4 - Dark Olive"}, {id: 4, name: "5 - Light Grey"}, 
+                {id: 5, name: "6 - Dark Brown"}, {id: 6, name: "7 - Red"}, {id: 7, name: "8 - Light Blue"}, {id: 8, name: "9 - Navy"}, {id: 9, name: "10 - Grey"}, 
+                {id: 10, name: "11 - White"}, {id: 11, name: "12 - Black"}, 
+            ]
+        ],
         moreDetails: {
             description: "Made from Black Pueblo vegetable tanned leather supplied by the Badalassi Carlo tannery from Italy, this strap exhibits saddle stitching in your choice of 10 colors with a durable waxed round polyester thread. The Badalassi Carlo Tannery in Italy is well known for their premium vegetable tanned leathers and the beautiful colors that they are able to produce. The Pueblo is their top grade full grain leather and has a supple feel and a unique rustic look that develops an amazing patina as it ages. We crafted this beautiful leather into a 2 mm thick strap which sits comfortably on the wrist of the wearer and complements any watch. The edges are beveled and burnished by hand to a smooth finish that adds character and durability; the leather strap is fitted with spring bars and a high quality stainless steel buckle. This watch strap is offered in S, M, and L lengths, for 18mm, 20 mm, 22 mm, and 24 mm lug widths, in tapered design. In a tapered design, the width changes from the watch lugs to the buckle or from watch lugs to the area of the long strap with pin holes by 2 mm. For example, a tapered watch strap can be 20 mm at the watch lugs and 18 mm at the buckle. The length of the strap is defined by the individual lengths of the short (buckle) and long (holes) sides, as follows: (S : 65 mm / 110 mm) (M : 70 mm / 120 mm) (L: 80 mm / 130 mm). Choose the size of the strap and your preferred stitching thread color in the variations section of the order. While not shown in the picture, \"white\" and \"black\" thread options are available. If you need a custom width / length please choose the \"Custom\" option and provide the sizing details in the order notes.",
             inpackage: "You will receive the watch strap gift-packaged in a kraft envelope tied with natural fiber cord. (pictured).",
@@ -146,7 +182,7 @@ export const products = [
             {id: 7, pic: "/products/bayfullsizewallet/pic8.png"},
             {id: 8, pic: "/products/bayfullsizewallet/pic9.png"},
         ],
-        price: "$230.00",
+        price: "$235.00",
         originalPrice: "$235.00",
         priceNum: 235.00,
         originalPriceNum: 235.00,
@@ -171,6 +207,15 @@ export const products = [
         type: "Wallets",
         pics: [
             {id: 0, pic: "/products/bayviewcardswallet/pic1.png"},
+            {id: 1, pic: "/products/bayviewcardswallet/pic2.png"},
+            {id: 2, pic: "/products/bayviewcardswallet/pic3.png"},
+            {id: 3, pic: "/products/bayviewcardswallet/pic4.png"},
+            {id: 4, pic: "/products/bayviewcardswallet/pic5.png"},
+            {id: 5, pic: "/products/bayviewcardswallet/pic6.png"},
+            {id: 6, pic: "/products/bayviewcardswallet/pic7.png"},
+            // {id: 7, pic: "/products/bayviewcardswallet/pic8.png"},
+            // {id: 8, pic: "/products/bayviewcardswallet/pic9.png"},
+            // {id: 9, pic: "/products/bayviewcardswallet/pic10.png"},
         ],
         price: "$110.00",
         originalPrice: "$110.00",
@@ -188,9 +233,9 @@ export const products = [
                 {id: 0, name:"Black"}, {id: 1, name: "Brown"}, {id: 2, name: "Cognac"},
             ],
             [
-                {id: 0, name: "Red"}, {id: 1, name: "Orange"}, {id: 2, name: "Green"}, {id: 3, name: "Navy Blue"}, 
-                {id: 4, name: "Brown"}, {id: 5, name: "Coffee"}, {id: 6, name: "Electric Blue"}, {id: 7, name: "Natural"}, 
-                {id: 8, name: "Grey"}, {id: 9, name: "Pearl Grey"},
+                {id: 0, name: "1 - Red"}, {id: 1, name: "2 - Orange"}, {id: 2, name: "3 - Green"}, {id: 3, name: "4 - Navy Blue"}, 
+                {id: 4, name: "5 - Brown"}, {id: 5, name: "6 - Coffee"}, {id: 6, name: "7 - Electric Blue"}, {id: 7, name: "8 - Natural"}, 
+                {id: 8, name: "9 - Grey"}, {id: 9, name: "10 - Pearl Grey"},
             ],
         ],
         moreDetails: {
@@ -315,8 +360,18 @@ export const products = [
         description: "Handmade, handstitched, full grain, vegetable tanned leather long wallet, cellphone wallet, women's wallet.",
         featured: false,
         personalizable: false,
-        personalizationTypes: [],
-        personalizationOptions: [],
+        personalizationTypes: [
+            {id: 0, name: "Primary Colour"}, {id: 1, name: "Secondary Colour"}
+        ],
+        personalizationOptions: [
+            [
+                {id: 0, name: "Black"}, {id: 1, name: "Cognac"}, {id: 2, name: "Natural Colour"}
+            ],
+            [
+                {id: 0, name: "1 - Red"}, {id: 1, name: "2 - Orange"}, {id: 2, name: "3 - Green"}, {id: 3, name: "4 - Navy Blue"}, {id: 4, name: "5 - Brown"}, {id: 5, name: "6 - Coffee"}, 
+                {id: 6, name: "7 - Electric Blue"}, {id: 7, name: "8 - Natural"}, {id: 8, name: "8 - Grey"}, {id: 9, name: "8 - Pearl Grey"}, 
+            ]
+        ],
         moreDetails: {
             description: "The wallet measures approximately 8\" x 3 5/8\" (20 cm x 9.5 cm) and it is securely closed with two snap buttons. Inside the wallet there is a pocket for cards or ID and one pocket covered with a flap for extra cards or change. The inside has room to fit unfolded bills and a cellphone. In the pictures we show the wallet with a Samsung Galaxy S21 Plus cellphone, fitted with a slim case. The overall dimensions of this phone are approximately 16.5 cm x 8 cm x 1 cm. One external pocket is available at the back of the wallet for easy access to often used cards - like access cards, driver's license, etc. The wallet will develop a beautiful patina, representative of a person's lifestyle, and it is the perfect Christmas, Valentines, Father's Day, Mother's Day, birthday, or any day's gift.",
             inpackage: "The shipping packaging will have the wallet in a canvas bag.",
@@ -332,6 +387,13 @@ export const products = [
         type: "Wallets",
         pics: [
             {id: 0, pic: "/products/finchcardswallet/pic1.png"},
+            {id: 1, pic: "/products/finchcardswallet/pic2.png"},
+            {id: 2, pic: "/products/finchcardswallet/pic3.png"},
+            {id: 3, pic: "/products/finchcardswallet/pic4.png"},
+            {id: 4, pic: "/products/finchcardswallet/pic5.png"},
+            {id: 5, pic: "/products/finchcardswallet/pic6.png"},
+            {id: 6, pic: "/products/finchcardswallet/pic7.png"},
+            {id: 7, pic: "/products/finchcardswallet/pic8.png"},
         ],
         price: "$62.00",
         originalPrice: "$62.00",
@@ -339,9 +401,20 @@ export const products = [
         originalPriceNum: 62.00,
         description: "Handmade wallet, vegetable tanned leather cards wallet, slim wallet, minimalist cards wallet, men's cards wallet, front pocket wallet.",
         featured: true,
-        personalizable: false,
-        personalizationTypes: [],
-        personalizationOptions: [],
+        personalizable: true,
+        personalizationTypes: [
+            {id: 0, name: "Thread Colour"}, {id: 1, name: "Tree of Life Style"},
+        ],
+        personalizationOptions: [
+            [
+                {id: 0, name: "White"}, {id: 1, name: "Black"}, {id: 2, name: "Option 1"}, {id: 3, name: "Option 2"}, {id: 4, name: "Option 3"}, {id: 5, name: "Option 4"}, 
+                {id: 6, name: "Option 5"}, {id: 7, name: "Option 6"}, {id: 8, name: "Option 7"}, {id: 9, name: "Option 8"}, {id: 10, name: "Option 9"}, {id: 11, name: "Option 10"}, 
+            ],
+            [
+                {id: 0, name: "Style A"}, {id: 1, name: "Style B"}, {id: 2, name: "Style C"}, {id: 3, name: "Style D"}, {id: 4, name: "Style E"}, {id: 5, name: "Style F"}, 
+                {id: 6, name: "Style G"}, 
+            ]
+        ],
         moreDetails: {
             description: "The wallet is designed for the minimalist or for the people who wish to carry minimum amount of cards in their back or front pocket during a night out. Crafted to order from premium European vegetable tanned leather, the wallet measures 4\" x 2.75\" (10 cm x 7cm) and offers two card slots and a larger pocket for extra cards, ID, or folded bills. The stitching is done by hand using the refined saddle stitch technique and the high quality, durable, polyester thread. The edges are beveled, sanded, sealed, and carefully burnished by hand to a perfectly warm shine that adds character and durability. Over time, the vegetable tanned leather will develop a patina representative of your life style, which will make the wallet unmistakably yours. The wallet can be customized with one of the five options for the \"Tree of Life\" embossing and your choice of stitching thread. Personalization is available upon request – the tree of life stamping can be replaced with letters - initials or message of your choice, Times New Roman font, stamped on the front panel. The height of the upper case font is about 7 mm. The lower case is proportionally smaller. If you don't express a special preference, the text will show in the same position as the tree of life.",
             inpackage: "The shipping packaging will have the wallet gift-packaged in a kraft envelope, tied with a natural fiber string (pictured).",
@@ -373,9 +446,21 @@ export const products = [
         originalPriceNum: 76.00,
         description: "Handmade watch strap, slim and supple vegetable tanned leather watch strap, Badalassi Carlo tobacco leather watch strap, brown watch strap.",
         featured: false,
-        personalizable: false,
-        personalizationTypes: [],
-        personalizationOptions: [],
+        personalizable: true,
+        personalizationTypes: [
+            {id: 0, name: "Size and Length"}, {id: 1, name: "Thread Colour"}
+        ],
+        personalizationOptions: [
+            [
+                {id: 0, name: "18mm, S"}, {id: 1, name: "18mm, M"}, {id: 2, name: "18mm, L"}, {id: 3, name: "20mm, S"}, {id: 4, name: "20mm, M"}, {id: 5, name: "20mm, L"},
+                {id: 6, name: "22mm, S"}, {id: 7, name: "22mm, M"}, {id: 8, name: "22mm, L"}, {id: 9, name: "24mm, S"}, {id: 10, name: "24mm, M"}, {id: 11, name: "24mm, L"},
+            ],
+            [
+                {id: 0, name: "1 - Burgundy"}, {id: 1, name: "2 - Orange"}, {id: 2, name: "3 - Brown"}, {id: 3, name: "4 - Dark Olive"}, {id: 4, name: "5 - Light Grey"}, 
+                {id: 5, name: "6 - Dark Brown"}, {id: 6, name: "7 - Red"}, {id: 7, name: "8 - Light Blue"}, {id: 8, name: "9 - Navy"}, {id: 9, name: "10 - Grey"}, 
+                {id: 10, name: "11 - White"}, {id: 11, name: "12 - Black"}, 
+            ]
+        ],
         moreDetails: {
             description: "Made from Tobacco Pueblo vegetable tanned leather supplied by the Badalassi Carlo tannery from Italy, this strap exhibits saddle stitching in your choice of 10 colors with a durable waxed round polyester thread. The Badalassi Carlo Tannery in Italy is well known for their premium vegetable tanned leathers and the beautiful colors that they are able to produce. The Pueblo is their top grade full grain leather and has a supple feel and a unique rustic look that develops an amazing patina as it ages. We crafted this beautiful leather into a 2 mm thick strap which sits comfortably on the wrist of the wearer and complements any watch. The edges are beveled and burnished by hand to a smooth finish that adds character and durability; the leather strap is fitted with spring bars and a high quality stainless steel buckle. This watch strap is offered in S, M, and L lengths, for 18mm, 20 mm, 22 mm, and 24 mm lug widths, in tapered design. In a tapered design, the width changes from the watch lugs to the buckle or from watch lugs to the area of the long strap with pin holes by 2 mm. For example, a tapered watch strap can be 20 mm at the watch lugs and 18 mm at the buckle. The length of the strap is defined by the individual lengths of the short (buckle) and long (holes) sides, as follows: S : 65 mm / 110 mm M : 70 mm / 120 mm L: 80 mm / 130 mm. Choose the size of the strap and your preferred stitching thread color in the variations section of the order. While not shown in the picture, \"white\" and \"black\" thread options are available. If you need a custom width / length please choose the \"Custom\" option and provide the sizing details in the order notes.",
             inpackage: "You will receive the watch strap gift-packaged in a kraft envelope tied with natural fiber cord. (pictured).",
