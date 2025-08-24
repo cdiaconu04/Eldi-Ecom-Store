@@ -1,6 +1,7 @@
 "use client"
 import Navbar from '../../components/navbar';
 import React, { useState, useEffect, useRef } from 'react';
+import { motion } from "motion/react";
 
 export default function Contact() {
 
@@ -81,15 +82,17 @@ export default function Contact() {
                             />
                             {/* hover:bg-gradient-to-r hover:from-emerald-500 hover:via-green-500 hover:to-green-600 */}
 
-                            <button type="submit"
+                            <motion.button type="submit"
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
                                 className="rounded-full font-bold
-                                text-white transition duration-200
+                                text-white
                                 bg-stone-800
                                 xl:text-xl lg:text-lg sm:text-base text-sm
                                 xl:p-3 md:p-2 p-1
                                 ">
                                 Send
-                            </button>
+                            </motion.button>
 
                         </form>
 
