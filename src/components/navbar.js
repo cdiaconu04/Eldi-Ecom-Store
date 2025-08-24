@@ -66,6 +66,9 @@ export default function Navbar({moved}) {
                             <li className="group flex flex-col hover:bg-white rounded-full transition">
                                 <Link className={`group block px-4 py-1 text-white font-bold rounded-sm border-0 group-hover:text-gray-950 transition duration-300 ${linkTextSize}`} href="/products"> Products </Link>
                             </li>
+                            <li className="group flex flex-col hover:bg-white rounded-full transition">
+                                <Link className={`group block px-4 py-1 text-white font-bold rounded-sm border-0 group-hover:text-gray-950 transition duration-300 ${linkTextSize}`} href="/contact"> Contact </Link>
+                            </li>
                             {/* <li className="group flex flex-col hover:bg-white rounded-full">
                                 <a className="group block px-5 py-2 text-white font-bold rounded-sm border-0 group-hover:text-gray-950 transition duration-300"> Contact us </a>
                             </li> */}
