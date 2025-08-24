@@ -45,8 +45,8 @@ export default function Contact() {
                                 placeholder="Your Name"
                                 value={formData.name}
                                 onChange={handleChange}
-                                className="rounded-lg border-none focus:outline-none placeholder-gray-500
-                                    text-gray-950 bg-white
+                                className="rounded-lg border-2 border-stone-900 focus:outline-none placeholder-gray-500
+                                    text-gray-950 bg-stone-100
                                     xl:text-base lg:text-sm text-xs 
                                     xl:p-3 md:p-2 sm:p-1.5 p-1
                                 "
@@ -59,8 +59,8 @@ export default function Contact() {
                                 placeholder="Your Email"
                                 value={formData.email}
                                 onChange={handleChange}
-                                className="rounded-lg border-none focus:outline-none placeholder-gray-500
-                                    text-gray-950 bg-white
+                                className="rounded-lg border-2 border-stone-900 focus:outline-none placeholder-gray-500
+                                    text-gray-950 bg-stone-100
                                     xl:text-base lg:text-sm text-xs 
                                     xl:p-3 md:p-2 sm:p-1.5 p-1
                                 "
@@ -73,8 +73,8 @@ export default function Contact() {
                                 value={formData.message}
                                 onChange={handleChange}
                                 rows="5"
-                                className="rounded-lg border-none focus:outline-none placeholder-gray-500
-                                    text-gray-950 bg-white
+                                className="rounded-lg border-2 border-stone-900 focus:outline-none placeholder-gray-500
+                                    text-gray-950 bg-stone-100
                                     xl:text-base lg:text-sm text-xs 
                                     xl:p-3 md:p-2 sm:p-1.5 p-1
                                     "
