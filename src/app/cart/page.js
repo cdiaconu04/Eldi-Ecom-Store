@@ -13,15 +13,15 @@ const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
 
 export default function CartPage() {
     function getTotalPrice(theItems) {
-        let sum = 0
+        let sum = 0;
         for (const item of theItems) {
-            sum += item.priceNum
+            sum += item.priceNum;
         }
-        return sum
+        return sum;
     }
 
     const { addToCart, removeFromCart, items: cartItems } = useCart();
-    const [ totalPrice, setTotalPrice ] = useState(getTotalPrice(cartItems))
+    const [ totalPrice, setTotalPrice ] = useState(getTotalPrice(cartItems));
 
     useEffect(() => {
         setTotalPrice(getTotalPrice(cartItems))

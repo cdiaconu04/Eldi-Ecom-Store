@@ -5,7 +5,6 @@ import { motion } from "motion/react"
 import { ChevronRight } from 'lucide-react';
 import { products } from '../../data/products.js';
 import Link from "next/link";
-
 import { useRecents } from "../../context/recents";
 
 export default function Products() {
@@ -33,7 +32,7 @@ export default function Products() {
     }
 
     function getPicDimensions() {
-        if (windowSize == "xs") return 250
+        if (windowSize == "xs") return 250;
         else if (windowSize == "sm") return 150;
         else if (windowSize == "md") return 170;
         else if (windowSize == "lg") return 200;

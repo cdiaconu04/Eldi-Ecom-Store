@@ -7,8 +7,8 @@ import Link from "next/link";
 import { useCart } from "../context/cart";
 
 export default function Navbar({moved}) {
-    const topStyle = "fixed top-0 left-0 w-full z-50 bg-opacity-100"
-    const movedStyle = "fixed top-0 left-0 w-full z-50 bg-stone-900 shadow-xl"
+    const topStyle = "fixed top-0 left-0 w-full z-50 bg-opacity-100";
+    const movedStyle = "fixed top-0 left-0 w-full z-50 bg-stone-900 shadow-xl";
     let finalStyle = moved ? movedStyle : topStyle;
 
     const [windowWidth, setWindowWidth] = useState(0);
@@ -20,7 +20,7 @@ export default function Navbar({moved}) {
     const linkTextSize = "2xl:text-lg xl:text-lg lg:text-base md:text-base sm:text-sm text-sm"
 
     function getLogoDimensions() {
-        if (windowSize == "xs") return 55
+        if (windowSize == "xs") return 55;
         else if (windowSize == "sm") return 60;
         else if (windowSize == "md") return 65;
         else if (windowSize == "lg") return 75;
@@ -50,10 +50,7 @@ export default function Navbar({moved}) {
     return (
         <nav className={finalStyle}>
             <div className="flex items-center justify-between mx-auto px-4 py-1">
-                <Link className="flex items-center space-x-3 rtl:space-x-reverse" href="/"
-                    // whileHover={{ scale: 1.05 }}
-                >
-                    {/* <p className="text-white font-bold font-serif text-5xl p-7"> eldi </p> */}
+                <Link className="flex items-center space-x-3 rtl:space-x-reverse" href="/">
                     <img src="/eldilogo.png" width={getLogoDimensions()} height={getLogoDimensions()} className="p-3"/>
                 </Link>
                 
@@ -69,9 +66,6 @@ export default function Navbar({moved}) {
                             <li className="group flex flex-col hover:bg-white rounded-full transition">
                                 <Link className={`group block px-4 py-1 text-white font-bold rounded-sm border-0 group-hover:text-gray-950 transition duration-300 ${linkTextSize}`} href="/contact"> Contact </Link>
                             </li>
-                            {/* <li className="group flex flex-col hover:bg-white rounded-full">
-                                <a className="group block px-5 py-2 text-white font-bold rounded-sm border-0 group-hover:text-gray-950 transition duration-300"> Contact us </a>
-                            </li> */}
                         </ul>
                     </div>
                 </div>
@@ -81,12 +75,8 @@ export default function Navbar({moved}) {
                     <Link href="/cart">
                         <div className="relative">
                             <motion.div className="group p-2 hover:bg-white rounded-full transition"
-                                // whileHover={{ scale: 1.03 }}
-                                // whileTap={{ scale: 0.95 }}
                             >
-                                    
                                 <ShoppingCart className="text-white group-hover:text-gray-950"/>
-                                    
                             </motion.div>
 
                             {cartItems.length > 0 && (
@@ -94,7 +84,6 @@ export default function Navbar({moved}) {
                                     {cartItems.length}
                                 </span>
                             )}
-
                         </div>
                     </Link>
                 </div>

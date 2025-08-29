@@ -6,13 +6,11 @@ import { motion } from "motion/react"
 import { useState, useEffect } from 'react';
 import { useCart } from "../../../context/cart";
 import { useRecents } from "../../../context/recents";
-
 import { loadStripe } from '@stripe/stripe-js';
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
-
 import Link from "next/link";
-// import { ToastContainer, ToastContentProps, toast } from 'react-toastify';
 import toast, { Toaster } from 'react-hot-toast';
+
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
 
 export default function ProductPage() {
     const [windowWidth, setWindowWidth] = useState(0);

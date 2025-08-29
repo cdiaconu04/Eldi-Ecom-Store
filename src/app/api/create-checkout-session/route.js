@@ -30,8 +30,6 @@ export async function POST(req) {
                         [`product_${index + 1}_personalization_2`]: product.personalizations?.[1] || '',
                     }))
                 )
-                
-                
             }
         });
 
